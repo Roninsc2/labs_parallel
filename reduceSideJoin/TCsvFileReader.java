@@ -35,7 +35,6 @@ public class TCsvFileReader {
                 }
             }
             flightData.add(dataLine);
-
         }
     }
 }
