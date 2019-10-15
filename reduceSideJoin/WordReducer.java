@@ -17,10 +17,5 @@ public class WordReducer extends Reducer<Text, IntWritable, Text, LongWritable> 
            count++;
        }
        context.write(key, new LongWritable(count));
-
-
-
-
-       
     }
 }
