@@ -13,9 +13,9 @@ public class WordReducer extends Reducer<Text, IntWritable, Text, LongWritable> 
        long count=0;
        Iterator iter = values.iterator();
        while(iter.hasNext()) {
-         iter.next();
-         count++;
-       } 
+           iter.next();
+           count++;
+       }
        context.write(key, new LongWritable(count));
     }
 }
