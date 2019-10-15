@@ -11,8 +11,9 @@ public class TCsvFileReader {
         String fileData = text.toString();
         String[] lines = fileData.split("\n");
         flightData = new ArrayList<ArrayList<String>>();
-        for (String line : lines) {
+        for (int k = 1; k < lines.length; k++) {
             int count = 0;
+            String line = lines[k];
             ArrayList<String> dataLine = new ArrayList<String>();
             for (int i = 0; i < line.length(); i++) {
                 if (line.charAt(i) == ',') {
@@ -23,7 +24,17 @@ public class TCsvFileReader {
                     dataLine.add(line.substring(i, i+5));
                     i+=5;
                 }
+                if (count == 15) {
+                    i++;
+                    String delay = "";
+                    while (line.charAt(i) != ',') {
+                        delay += line.charAt(i);
+                    }
+                    dataLine.add(delay);
+                    break;
+                }
             }
+            flightData.add(dataLine);
         }
     }
 }
