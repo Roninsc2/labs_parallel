@@ -13,13 +13,15 @@ public class TCsvFileReader {
         flightData = new ArrayList<ArrayList<String>>();
         for (String line : lines) {
             int count = 0;
+            ArrayList<String> dataLine = new ArrayList<String>();
             for (int i = 0; i < line.length(); i++) {
                 if (line.charAt(i) == ',') {
                     count++;
                 }
                 if (count == 13) {
                     i++;
-                    while (char)
+                    dataLine.add(line.substring(i, i+5));
+                    i+=5;
                 }
             }
         }
