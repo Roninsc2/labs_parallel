@@ -1,12 +1,14 @@
 package reduceSideJoin;
 
 import org.apache.hadoop.io.WritableComparable;
+import org.apache.hadoop.io.WritableComparator;
+
 import  java.io.DataInput;
 import  java.io.DataOutput;
 import  java.io.IOException;
 
 
-public class TKeyGroupingComparator extends WritableComparable<TAirportKeyComparable>
+public class TKeyGroupingComparator extends WritableComparator
 {
     private int key;
     private int type;
