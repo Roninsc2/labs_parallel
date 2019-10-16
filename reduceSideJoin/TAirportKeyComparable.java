@@ -26,17 +26,15 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         type = in.readInt();
     }
 
-    public int compareTo(MyWritableComparable o) {
-        int thisValue = this.value;
-        int thatValue = o.value;
-        return (thisValue < thatValue ? -1 : (thisValue==thatValue ? 0 : 1));
+    public int compareTo(TAirportKeyComparable o) {
+        int diff = Integer.compare(this.key, o.key);
+        if (diff == 0) {
+            return Integer.compare(this.type, o.type);
+        }
+        return diff;
     }
 
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + counter;
-        result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
-        return result
+        return Integer.hashCode(key);
     }
 }

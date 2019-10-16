@@ -5,13 +5,14 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class TAirportMapper extends Mapper<LongWritable, Text, TAirportKeyComparable> {
+public class TFlightMapper extends Mapper<LongWritable, Text, TAirportKeyComparable, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        TCsvAirPortReader reader = new TCsvAirPortReader(value);
+        TCsvFlightReader reader = new TCsvFlightReader(value);
         for (int i = 0; i < reader.getDataSize(); i++) {
             int key = Integer.parseInt(reader.getId(i));
-            context.write(new TAirportKeyComparable(key, 0));
+            String delay = reader.getDelay(i);
+            context.write(new TAirportKeyComparable(key, 1), new Text(delay));
         }
     }
 }
