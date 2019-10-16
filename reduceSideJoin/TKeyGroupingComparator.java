@@ -19,6 +19,8 @@ public class TKeyGroupingComparator extends WritableComparator
 
     int	compare(WritableComparable a, WritableComparable b) {
         TAirportKeyComparable x = (TAirportKeyComparable) a;
+        TAirportKeyComparable y = (TAirportKeyComparable) b;
+        return x.compareTo(y);
     }
     Compare two WritableComparables.
 }
