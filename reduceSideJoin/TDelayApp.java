@@ -18,8 +18,8 @@ public class TDelayApp {
         job.setJarByClass(TDelayApp.class);
         job.setJobName("Airports delay");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, TAirportMapper.class);
-        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, TFlightMapper.class);
-        FileOutputFormat.setOutputPath(job, new Path(args[1])); 
+        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, TFlightMapper.class);
+        FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setMapperClass(TAirportMapper.class);
         job.setReducerClass(TAirportReducer.class);
         job.setOutputKeyClass(Text.class); 
