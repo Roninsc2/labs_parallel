@@ -24,8 +24,6 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
     public int compareKeys(TAirportKeyComparable o) {
         return Integer.compare(key, o.key);
     }
-
-
     
 
     public int getKey() {
