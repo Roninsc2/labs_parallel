@@ -20,7 +20,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         return key;
     }
 
-    
+
     public void write(DataOutput out) throws IOException {
         out.writeInt(key);
         out.writeLong(type);
@@ -39,7 +39,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         return diff;
     }
 
-    public int hashCode() {
+    public int getHashCode() {
         return Integer.hashCode(key);
     }
 }
