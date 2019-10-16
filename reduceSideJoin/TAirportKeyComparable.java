@@ -34,7 +34,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         key = in.readInt();
         type = in.readInt();
     }
-    
+
     public int compareTo(TAirportKeyComparable o) {
         int diff = Integer.compare(this.key, o.key);
         if (diff == 0) {
