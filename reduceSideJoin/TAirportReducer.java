@@ -20,7 +20,7 @@ public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritab
        while(iter.hasNext()) {
            iter.next();
            float delay = Float.parseFloat(iter.toString());
-           if (min = Float.min(min, ))
+           min = Float.min(min, delay);
        }
        context.write(key, new LongWritable(count));
     }
