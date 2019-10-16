@@ -24,7 +24,7 @@ public class TDelayApp {
         job.setGroupingComparatorClass(TKeyGroupingComparator.class);
         job.setPartitionerClass(TAirportIdPart.class);
         job.setReducerClass(TAirportReducer.class);
-        job.setMapOutputKeyClass();
+        job.setMapOutputKeyClass(TAirportKeyComparable.class);
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2); 
