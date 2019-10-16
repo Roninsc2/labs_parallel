@@ -29,6 +29,6 @@ public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritab
            count++;
 
        }
-       context.write(new);
+       context.write(new );
     }
 }
