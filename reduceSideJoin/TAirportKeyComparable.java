@@ -20,19 +20,17 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         return key;
     }
 
-    @Override
+    
     public void write(DataOutput out) throws IOException {
         out.writeInt(key);
         out.writeLong(type);
     }
 
-    @Override
     public void readFields(DataInput in) throws IOException {
         key = in.readInt();
         type = in.readInt();
     }
 
-    @Override
     public int compareTo(TAirportKeyComparable o) {
         int diff = Integer.compare(this.key, o.key);
         if (diff == 0) {
@@ -40,8 +38,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         }
         return diff;
     }
-    
-    @Override
+
     public int hashCode() {
         return Integer.hashCode(key);
     }
