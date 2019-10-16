@@ -14,7 +14,7 @@ public class TAirportReducer extends Reducer<TAirportKeyComparable, Text, IntWri
        float min = 1000000;
        float max = 0;
        float sum = 0;
-       int count = 0;
+       float count = 0;
        iter.next();
        while(iter.hasNext()) {
            iter.next();
