@@ -16,7 +16,7 @@ public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritab
        float sum = 0;
        int count = 0;
        while(iter.hasNext()) {
-           iter.next();
+           float delay = Float.parseFloat()
            count++;
        }
        context.write(key, new LongWritable(count));
