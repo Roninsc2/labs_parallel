@@ -21,7 +21,7 @@ public class TDelayApp {
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, TFlightMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
-        job.
+        job.setPartitionerClass();
         job.setReducerClass(TAirportReducer.class);
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(Text.class);
