@@ -3,7 +3,7 @@ package reduceSideJoin;
 import java.util.ArrayList;
 import org.apache.hadoop.io.Text;
 
-public class TCsvFileReader {
+public class TCsvFlightReader {
     //Dest_id, arr_delay
     private ArrayList<ArrayList<String>> flightData;
 
@@ -36,5 +36,17 @@ public class TCsvFileReader {
             }
             flightData.add(dataLine);
         }
+    }
+
+    public int getDataSize() {
+        return flightData.size();
+    }
+
+    public String getId(int i) {
+        return flightData.get(i).get(0);
+    }
+
+    public String getDelay(int i) {
+        return flightData.get(i).get(1);
     }
 }
