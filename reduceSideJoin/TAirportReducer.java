@@ -7,9 +7,9 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.util.Iterator;
 
-public class TAirportReducer extends Reducer<TAirportKeyComparable, IntWritable, Text, LongWritable> {
+public class TAirportReducer extends Reducer<TAirportKeyComparable, Text, IntWritable, Text> {
     @Override
-    protected void reduce(TAirportKeyComparable key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+    protected void reduce(TAirportKeyComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
        Iterator iter = values.iterator();
        float min = 1000000;
        float max = 0;
