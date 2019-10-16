@@ -5,7 +5,6 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import java.nio.channels.FileLock;
 import java.util.Iterator;
 import org.apache.hadoop.io.LongWritable;
 
