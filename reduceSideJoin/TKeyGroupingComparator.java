@@ -1,6 +1,5 @@
 package reduceSideJoin;
 
-import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
 import  java.io.DataInput;
