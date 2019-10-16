@@ -27,6 +27,9 @@ public class TAirportReducer extends Reducer<TAirportKeyComparable, Text, IntWri
            count++;
 
        }
-       context.write(new );
+       if (count > 0) {
+           context.write(new IntWritable(), new Text());
+       }
+
     }
 }
