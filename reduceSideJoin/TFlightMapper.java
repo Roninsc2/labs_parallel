@@ -12,7 +12,7 @@ public class TFlightMapper extends Mapper<LongWritable, Text, TAirportKeyCompara
         for (int i = 0; i < reader.getDataSize(); i++) {
             int key_val = Integer.parseInt(reader.getId(i));
             String delay = reader.getDelay(i);
-            context.write(new TAirportKeyComparable(key, 1), new Text(delay));
+            context.write(new TAirportKeyComparable(key_val, 1), new Text(delay));
         }
     }
 }
