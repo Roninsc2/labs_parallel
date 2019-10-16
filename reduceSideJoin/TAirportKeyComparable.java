@@ -39,7 +39,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         return diff;
     }
 
-    public int getHashCode() {
+    public int hashCode() {
         return Integer.hashCode(key);
     }
 }
