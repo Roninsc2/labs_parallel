@@ -10,7 +10,7 @@ import  java.io.IOException;
 public class TKeyGroupingComparator extends WritableComparator
 {
     public TKeyGroupingComparator() {
-        
+
     }
 
 
