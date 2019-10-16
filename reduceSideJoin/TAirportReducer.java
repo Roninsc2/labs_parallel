@@ -25,6 +25,7 @@ public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritab
                max = Float.max(max, delay);
                sum += delay;
            }
+           count++;
 
        }
        context.write(key, new LongWritable(count));
