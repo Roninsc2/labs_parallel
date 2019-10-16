@@ -9,16 +9,8 @@ import  java.io.IOException;
 
 public class TKeyGroupingComparator extends WritableComparator
 {
-    private int key;
-    private int type;
-
-    public  TAirportKeyComparable(int a, int b) {
-        key = a;
-        type = b;
-    }
-
-    public int getKey() {
-        return key;
+    public TKeyGroupingComparator() {
+        
     }
 
 
