@@ -1,7 +1,7 @@
 package reduceSideJoin;
 
 import org.apache.hadoop.mapreduce.Partitioner;
-import org.w3c.dom.Text;
+import org.apache.hadoop.io.Text;
 
 public class TAirportIdPart extends Partitioner<TAirportKeyComparable, Text>
 {
