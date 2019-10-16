@@ -1,5 +1,6 @@
 package reduceSideJoin;
 
+import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
 import  java.io.DataInput;
@@ -16,6 +17,8 @@ public class TKeyGroupingComparator extends WritableComparator
     Optimization hook.
     int	compare(Object a, Object b)
 
-    int	compare(WritableComparable a, WritableComparable b)
+    int	compare(WritableComparable a, WritableComparable b) {
+        TAirportKeyComparable x = 
+    }
     Compare two WritableComparables.
 }
