@@ -29,13 +29,13 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         out.writeLong(type);
     }
 
-    
+
     public void readFields(DataInput in) throws IOException {
         key = in.readInt();
         type = in.readInt();
     }
 
-    @Override
+    
     public int compareTo(TAirportKeyComparable o) {
         int diff = Integer.compare(this.key, o.key);
         if (diff == 0) {
