@@ -10,8 +10,8 @@ public class TAirportMapper extends Mapper<LongWritable, Text, TAirportKeyCompar
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         TCsvAirPortReader reader = new TCsvAirPortReader(value);
         for (int i = 0; i < reader.getDataSize(); i++) {
-            int key = Integer.parseInt(reader.getId(i));
-            context.write(new TAirportKeyComparable(key, 0));
+            int key_val = Integer.parseInt(reader.getId(i));
+            context.write(new TAirportKeyComparable(key_val, 0));
         }
     }
 }
