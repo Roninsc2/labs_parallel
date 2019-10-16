@@ -5,5 +5,5 @@ import org.apache.hadoop.io.Text;
 
 public class TAirportIdPart extends Partitioner<TAirportKeyComparable, Text>
 {
-    public int getPart
+    public int getPartition()
 }
