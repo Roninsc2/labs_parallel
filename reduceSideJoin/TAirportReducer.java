@@ -6,7 +6,6 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.util.Iterator;
-import org.apache.hadoop.io.LongWritable;
 
 public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritable> {
     @Override
