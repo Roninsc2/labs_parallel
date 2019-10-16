@@ -29,7 +29,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         out.writeLong(type);
     }
 
-    @Override
+    
     public void readFields(DataInput in) throws IOException {
         key = in.readInt();
         type = in.readInt();
