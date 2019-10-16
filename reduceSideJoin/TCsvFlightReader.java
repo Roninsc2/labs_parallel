@@ -7,7 +7,7 @@ public class TCsvFlightReader {
     //Dest_id, arr_delay
     private ArrayList<ArrayList<String>> flightData;
 
-    public TCsvFileReader(Text text) {
+    public TCsvFlightReader(Text text) {
         String fileData = text.toString();
         String[] lines = fileData.split("\n");
         flightData = new ArrayList<ArrayList<String>>();
