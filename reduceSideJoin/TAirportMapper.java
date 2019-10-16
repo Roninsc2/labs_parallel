@@ -5,7 +5,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class TAirportMapper extends Mapper<LongWritable, Text, TAirportKeyComparable> {
+public class TAirportMapper extends Mapper<LongWritable, Text, TAirportKeyComparable, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         TCsvAirPortReader reader = new TCsvAirPortReader(value);
