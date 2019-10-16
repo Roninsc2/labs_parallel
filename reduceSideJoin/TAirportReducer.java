@@ -23,6 +23,7 @@ public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritab
            if (delay >= 0) {
                min = Float.min(min, delay);
                max = Float.max(max, delay);
+               sum += delay;
            }
 
        }
