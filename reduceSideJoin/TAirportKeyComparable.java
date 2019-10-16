@@ -24,7 +24,6 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         return key;
     }
 
-    @Override
     public void write(DataOutput out) throws IOException {
         out.writeInt(key);
         out.writeLong(type);
