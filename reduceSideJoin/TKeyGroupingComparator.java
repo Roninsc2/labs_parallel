@@ -6,7 +6,7 @@ import  java.io.DataOutput;
 import  java.io.IOException;
 
 
-public class TKeyGroupingComparator implements WritableComparable<TAirportKeyComparable>
+public class TKeyGroupingComparator extends WritableComparable<TAirportKeyComparable>
 {
     private int key;
     private int type;
