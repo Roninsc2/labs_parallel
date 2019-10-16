@@ -10,7 +10,6 @@ import org.apache.hadoop.io.LongWritable;
 public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritable> {
     @Override
     protected void reduce(TAirportKeyComparable key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-       long count=0;
        Iterator iter = values.iterator();
        while(iter.hasNext()) {
            iter.next();
