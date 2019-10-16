@@ -1,6 +1,10 @@
 package reduceSideJoin;
 
 import org.apache.hadoop.io.WritableComparable;
+import  java.io.DataInput;
+import  java.io.DataOutput;
+import  java.io.IOException;
+
 
 public class TAirportKeyComparable implements WritableComparable<TAirportKeyComparable>
 {
@@ -13,13 +17,13 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
     }
 
     public void write(DataOutput out) throws IOException {
-        out.writeInt(counter);
-        out.writeLong(timestamp);
+        out.writeInt(key);
+        out.writeLong(type);
     }
 
     public void readFields(DataInput in) throws IOException {
-        counter = in.readInt();
-        timestamp = in.readLong();
+        key = in.readInt();
+        type = in.readInt();
     }
 
     public int compareTo(MyWritableComparable o) {
