@@ -22,6 +22,7 @@ public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritab
            float delay = Float.parseFloat(iter.toString());
            if (delay >= 0) {
                min = Float.min(min, delay);
+               max = Float.max(max, delay);
            }
 
        }
