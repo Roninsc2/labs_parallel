@@ -12,27 +12,10 @@ public class TKeyGroupingComparator extends WritableComparator
     public TKeyGroupingComparator() {
 
     }
+    int	compare(byte[] b1, int s1, int l1, byte[] b2, int s2, int l2)
+    Optimization hook.
+    int	compare(Object a, Object b)
 
-
-    public void write(DataOutput out) throws IOException {
-        out.writeInt(key);
-        out.writeLong(type);
-    }
-
-    public void readFields(DataInput in) throws IOException {
-        key = in.readInt();
-        type = in.readInt();
-    }
-
-    public int compareTo(TAirportKeyComparable o) {
-        int diff = Integer.compare(this.key, o.key);
-        if (diff == 0) {
-            return Integer.compare(this.type, o.type);
-        }
-        return diff;
-    }
-
-    public int hashCode() {
-        return Integer.hashCode(key);
-    }
+    int	compare(WritableComparable a, WritableComparable b)
+    Compare two WritableComparables.
 }
