@@ -16,6 +16,10 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         type = b;
     }
 
+    public int getKey() {
+        return key;
+    }
+
     public void write(DataOutput out) throws IOException {
         out.writeInt(key);
         out.writeLong(type);
