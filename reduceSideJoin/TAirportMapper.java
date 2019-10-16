@@ -6,13 +6,13 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class TAirportMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class TAirportMapper extends Mapper<LongWritable, Text, IntWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String line = value.toString();
-	String[] words = line.replaceAll("[^\\p{L}\\p{Nd}]+", " ").toLowerCase().replaceAll("[\\s]{2,}", "").split(" ");
-	for (String word : words) {
-		context.write(new Text(word), new IntWritable(1));
-	}
+        TCsvAirPortReader reader = new TCsvAirPortReader(value);
+        for (int i = 0; i < reader.getDataSize(); i++) {
+            int key = Integer.parseInt(reader.getId(i));
+            context.write(key);
+        }
     }
 }
