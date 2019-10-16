@@ -13,14 +13,11 @@ public class TKeyGroupingComparator extends WritableComparator
     public TKeyGroupingComparator() {
 
     }
-    int	compare(byte[] b1, int s1, int l1, byte[] b2, int s2, int l2)
-    Optimization hook.
-    int	compare(Object a, Object b)
-
+    
     int	compare(WritableComparable a, WritableComparable b) {
         TAirportKeyComparable x = (TAirportKeyComparable) a;
         TAirportKeyComparable y = (TAirportKeyComparable) b;
         return x.compareTo(y);
     }
-    
+
 }
