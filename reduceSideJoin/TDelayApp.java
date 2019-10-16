@@ -17,7 +17,7 @@ public class TDelayApp {
         Job job = Job.getInstance(); 
         job.setJarByClass(TDelayApp.class);
         job.setJobName("Airports delay");
-        FileInputFormat.addInputPath(job, new Path(args[0]), );
+        MultipleInputs.addInputPath(job, new Path(args[0]), );
         FileOutputFormat.setOutputPath(job, new Path(args[1])); 
         job.setMapperClass(TAirportMapper.class);
         job.setReducerClass(TAirportReducer.class);
