@@ -40,7 +40,8 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         }
         return diff;
     }
-
+    
+    @Override
     public int hashCode() {
         return Integer.hashCode(key);
     }
