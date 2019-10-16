@@ -12,6 +12,7 @@ public class TAirportReducer extends Reducer<Text, IntWritable, Text, LongWritab
     protected void reduce(TAirportKeyComparable key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
        Iterator iter = values.iterator();
        int min = 0;
+       int max = 0;
        while(iter.hasNext()) {
            iter.next();
            count++;
