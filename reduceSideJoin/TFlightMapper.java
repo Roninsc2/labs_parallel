@@ -9,10 +9,9 @@ public class TFlightMapper extends Mapper<LongWritable, Text, TAirportKeyCompara
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         TCsvFlightReader reader = new TCsvFlightReader(value);
-        for (int i = 0; i < reader.getDataSize(); i++) {
-            int key_val = Integer.parseInt(reader.getId(i));
-            String delay = reader.getDelay(i);
-            context.write(new TAirportKeyComparable(key_val, 1), new Text(delay));
+        int key_val = reader.getId();
+        if (key_val != -1) {
+            context.write(new TAirportKeyComparable(key_val, 1), new Text(reader.getDelay()));
         }
     }
 }

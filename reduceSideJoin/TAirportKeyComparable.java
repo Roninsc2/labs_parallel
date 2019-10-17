@@ -24,7 +24,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
     public int compareKeys(TAirportKeyComparable o) {
         return Integer.compare(key, o.key);
     }
-    
+
 
     public int getKey() {
         return key;
@@ -32,7 +32,7 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
 
     public void write(DataOutput out) throws IOException {
         out.writeInt(key);
-        out.writeLong(type);
+        out.writeInt(type);
     }
 
 
@@ -42,9 +42,9 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
     }
 
     public int compareTo(TAirportKeyComparable o) {
-        int diff = Integer.compare(this.key, o.key);
+        int diff = Integer.compare(key, o.key);
         if (diff == 0) {
-            return Integer.compare(this.type, o.type);
+            return Integer.compare(type, o.type);
         }
         return diff;
     }

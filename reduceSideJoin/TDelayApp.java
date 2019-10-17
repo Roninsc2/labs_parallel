@@ -7,9 +7,10 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import java.io.IOException;
 
 public class TDelayApp {
-    public static void main(String[] args) throws Exception { 
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         if (args.length != 3) {
             System.err.println("Usage: TDelayApp <input airport path> <input flight path> <output path>");
             System.exit(-1);
@@ -25,6 +26,7 @@ public class TDelayApp {
         job.setPartitionerClass(TAirportIdPart.class);
         job.setReducerClass(TAirportReducer.class);
         job.setMapOutputKeyClass(TAirportKeyComparable.class);
+
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(1);

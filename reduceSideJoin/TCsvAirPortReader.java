@@ -1,27 +1,25 @@
 package reduceSideJoin;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.apache.hadoop.io.Text;
 
 public class TCsvAirPortReader {
     //Dest_id, arr_delay
-    private ArrayList<String> airportData;
+    private int id;
 
     public TCsvAirPortReader(Text text) {
         String fileData = text.toString();
-        String[] lines = fileData.split("\n");
-        airportData = new ArrayList<String>();
-        for (int k = 1; k < lines.length; k++) {
-            String dataLine = lines[k].substring(1, 6);
-            airportData.add(dataLine);
+        String[] lines = fileData.split( ",");
+        if (lines[0].length() == 7) {
+            id = Integer.parseInt(lines[0].substring(1, 6));
+        } else {
+            id = -1;
         }
     }
 
-    public int getDataSize() {
-        return airportData.size();
-    }
-
-    public String getId(int i) {
-        return airportData.get(i);
+    public int getId() {
+        return id;
     }
 }
