@@ -3,7 +3,6 @@ package reduceSideJoin;
 import org.apache.hadoop.io.Text;
 
 public class TCsvFlightReader {
-    //Dest_id, arr_delay
     int id;
     String delay;
 
