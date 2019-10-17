@@ -6,7 +6,6 @@ import java.util.Arrays;
 import org.apache.hadoop.io.Text;
 
 public class TCsvAirPortReader {
-    //Dest_id, arr_delay
     private int id;
 
     public TCsvAirPortReader(Text text) {
