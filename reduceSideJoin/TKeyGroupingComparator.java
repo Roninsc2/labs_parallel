@@ -16,7 +16,6 @@ public class TKeyGroupingComparator extends WritableComparator
         return Integer.compare(a, b);
     }
 
-    @Override
     public int	compare(WritableComparable a, WritableComparable b) {
         TAirportKeyComparable x = (TAirportKeyComparable) a;
         TAirportKeyComparable y = (TAirportKeyComparable) b;
