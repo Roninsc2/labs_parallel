@@ -1,8 +1,5 @@
 package reduceSideJoin;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import org.apache.hadoop.io.Text;
 
 public class TCsvAirPortReader {
