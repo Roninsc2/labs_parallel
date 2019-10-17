@@ -2,10 +2,10 @@ package reduceSideJoin;
 
 import org.apache.hadoop.io.Text;
 
-public class TCsvAirPortReader {
+public class TCsvAirportReader {
     private int id;
 
-    public TCsvAirPortReader(Text text) {
+    public TCsvAirportReader(Text text) {
         String fileData = text.toString();
         String[] lines = fileData.split( ",");
         if (lines[0].length() == 7) {

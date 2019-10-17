@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 public class TAirportMapper extends Mapper<LongWritable, Text, TAirportKeyComparable, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        TCsvAirPortReader reader = new TCsvAirPortReader(value);
+        TCsvAirportReader reader = new TCsvAirportReader(value);
         int key_val = reader.getId();
         if (key_val != -1) {
             context.write(new TAirportKeyComparable(key_val, 0), new Text());
