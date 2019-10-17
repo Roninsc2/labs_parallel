@@ -27,6 +27,9 @@ public class TAirportReducer extends Reducer<TAirportKeyComparable, Text, IntWri
            count++;
        }
        if (count > 0) {
+           if (min == 1000000) {
+
+           }
            String text = min + " " + max + " " + sum/count;
            context.write(new IntWritable(key.getKey()), new Text(text));
        }
