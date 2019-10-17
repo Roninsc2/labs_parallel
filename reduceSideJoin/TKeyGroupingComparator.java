@@ -8,8 +8,7 @@ public class TKeyGroupingComparator extends WritableComparator
 {
     public TKeyGroupingComparator() {
     }
-
-    @Override
+    
     public int compare(byte[] b1, int s1, int l1, byte[] b2, int s2, int l2) {
         int a = readInt(b1, s1);
         int b = readInt(b2, s2);
