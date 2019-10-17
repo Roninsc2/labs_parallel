@@ -22,8 +22,4 @@ public class TKeyGroupingComparator extends WritableComparator
         TAirportKeyComparable y = (TAirportKeyComparable) b;
         return x.compareKeys(y);
     }
-
-
-    
-
 }
