@@ -1,6 +1,5 @@
 package reduceSideJoin;
 
-import java.util.ArrayList;
 import org.apache.hadoop.io.Text;
 
 public class TCsvFlightReader {
