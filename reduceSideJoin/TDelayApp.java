@@ -23,7 +23,7 @@ public class TDelayApp {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
         job.setGroupingComparatorClass(TKeyGroupingComparator.class);
-        job.setPartitionerClass(TAirportIdPart.class);
+        job.setPartitionerClass(TAirportIdPartitioner.class);
         job.setReducerClass(TAirportReducer.class);
         job.setMapOutputKeyClass(TAirportKeyComparable.class);
 
