@@ -25,7 +25,6 @@ public class TAirportReducer extends Reducer<TAirportKeyComparable, Text, IntWri
                sum += delay;
            }
            count++;
-
        }
        if (count > 0) {
            String text = min + " " + max + " " + sum/count;
