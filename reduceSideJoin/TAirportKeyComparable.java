@@ -25,7 +25,6 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         return Integer.compare(key, o.key);
     }
 
-
     public int getKey() {
         return key;
     }
@@ -34,7 +33,6 @@ public class TAirportKeyComparable implements WritableComparable<TAirportKeyComp
         out.writeInt(key);
         out.writeInt(type);
     }
-
 
     public void readFields(DataInput in) throws IOException {
         key = in.readInt();

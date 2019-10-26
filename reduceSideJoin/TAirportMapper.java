@@ -6,12 +6,14 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class TAirportMapper extends Mapper<LongWritable, Text, TAirportKeyComparable, Text> {
+    private static final int INVALID_KEY = -1;
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         TCsvAirportReader reader = new TCsvAirportReader(value);
-        int key_val = reader.getId();
-        if (key_val != -1) {
-            context.write(new TAirportKeyComparable(key_val, 0), new Text());
+        int keyVal = reader.getId();
+        if (keyVal != INVALID_KEY) {
+            context.write(new TAirportKeyComparable(keyVal, 0), new Text());
         }
     }
 }

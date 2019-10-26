@@ -3,16 +3,22 @@ package reduceSideJoin;
 import org.apache.hadoop.io.Text;
 
 public class TCsvFlightReader {
-    int id;
-    String delay;
+    private int id;
+    private String delay;
+    private static final int INVALID_ID = -1;
+    private static final String DELIMITER = ",";
+    private static final int ID_LEN = 5;
+    private static final int ID_CLMN = 14;
+    private static final int DELAY_CLMN = 17;
 
     public TCsvFlightReader(Text text) {
-        String[] lines = text.toString().split(",");
-        if (lines[14].length() == 5 && lines[17].length() > 0) {
-            id = Integer.parseInt(lines[14]);
-            delay = lines[17];
+        String[] lines = text.toString().split(DELIMITER);
+        String idStr = lines[ID_CLMN];
+        delay = lines[DELAY_CLMN];
+        if (idStr.length() == ID_LEN && delay.length() > 0) {
+            id = Integer.parseInt(idStr);
         } else {
-            id = -1;
+            id = INVALID_ID;
         }
     }
 

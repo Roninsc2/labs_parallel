@@ -8,6 +8,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.util.Iterator;
 
 public class TAirportReducer extends Reducer<TAirportKeyComparable, Text, IntWritable, Text> {
+
     @Override
     protected void reduce(TAirportKeyComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
        Iterator<Text> iter = values.iterator();
