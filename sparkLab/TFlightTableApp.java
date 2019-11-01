@@ -42,8 +42,8 @@ public class TFlightTableApp {
                 map(TCsvParser::getColumns).
                 filter(val -> !val[CANCEL_ID_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
 
-        final Broadcast<Map<Integer, String>> airportBroadcast = airportClmn.
-                mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val))).collectAsMap();
+        final Broadcast<Map<Integer, String>> airportBroadcast = sc.broadcast(airportClmn.
+                mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val))).collectAsMap());
 
     }
 }
