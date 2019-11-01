@@ -15,7 +15,7 @@ public class TFlightTableApp {
     private static final String FLIGHTS_FILE = "664600583_T_ONTIME_sample.csv";
     private static final String OUTPUT_FILE = "lab3_output";
 
-    private getId(String[] val, int clmn) {
+    private int getId(String[] val, int clmn) {
 
     }
 
