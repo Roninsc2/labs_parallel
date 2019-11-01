@@ -5,7 +5,7 @@ public class TCsvAirportParser {
         private static final int INVALID_ID = -1;
         private static final String COMMA = ",";
         private static final String QOUTES = "\"";
-        private static final int ID_CLMN = 0;
+        private static final int ID_CLMN = 1;
 
         public TCsvAirportParser(String text) {
             String fileData = text.toString();
