@@ -9,6 +9,7 @@ public class TFlightDataCalc implements Serializable {
     private int sumCount;
 
     TFlightDataCalc(float d, int c) {
+        delayCount = 0;
         if (d > 0) {
             delayCount = 1;
         }
@@ -18,6 +19,7 @@ public class TFlightDataCalc implements Serializable {
     }
 
     static TFlightDataCalc calculate(TFlightDataCalc a, TFlightDataCalc b) {
-        float newDelay = Float.max(a.delay, b.delay)
+        float newDelay = Float.max(a.delay, b.delay);
+        float delayCount
     }
 }
