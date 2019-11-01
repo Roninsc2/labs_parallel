@@ -11,6 +11,8 @@ public class TFlightTableApp {
     private static final int DELAY_ID_CLMN = 18;
     private static final int CANCEL_ID_CLMN = 19;
     private static final String AIRPORT_FILE = 19;
+    private static final String FLIGHTS_FILE = 19;
+    private static final String AIRPORT_FILE = 19;
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
