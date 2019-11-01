@@ -18,7 +18,7 @@ public class TFlightTableApp {
     private static final int CANCEL_CLMN = 19;
     private static final String AIRPORT_FILE = "L_AIRPORT_ID.csv";
     private static final String FLIGHTS_FILE = "664600583_T_ONTIME_sample.csv";
-    private static final String OUTPUT_FILE = "lab3_output1";
+    private static final String OUTPUT_FILE = "lab3_output";
     private static final String FIRST_LINE_CHECK_AIRPORT = "Code";
     private static final String FIRST_LINE_CHECK_FLIGHTS = "CANCELLED";
 
