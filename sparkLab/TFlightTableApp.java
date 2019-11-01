@@ -43,7 +43,7 @@ public class TFlightTableApp {
                 filter(val -> !val[CANCEL_ID_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
 
         final Broadcast<Map<Integer, String>> airportBroadcast = airportClmn.
-                mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val)));
+                mapToPair(val -> new Tuple2<Integer, String>(getId(val, AIRPORT_ID_CLMN), getName(val)));
 
     }
 }
