@@ -60,5 +60,6 @@ public class TFlightTableApp {
         final Broadcast<Map<Integer, String>> airportBroadcast = sc.broadcast(airportClmn.
                 mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val))).collectAsMap());
 
+        JavaRDD<String> result = dataCalc.map(val -> airportBroadcast.value().get(val._1._1))
     }
 }
