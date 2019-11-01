@@ -14,8 +14,8 @@ public class TFlightTableApp {
     private static final int AIRPORT_NAME_CLMN = 1;
     private static final int ORIGIN_ID_CLMN = 11;
     private static final int DEST_ID_CLMN = 14;
-    private static final int DELAY_ID_CLMN = 18;
-    private static final int CANCEL_ID_CLMN = 19;
+    private static final int DELAY_CLMN = 18;
+    private static final int CANCEL_CLMN = 19;
     private static final String AIRPORT_FILE = "L_AIRPORT_ID.csv";
     private static final String FLIGHTS_FILE = "664600583_T_ONTIME_sample.csv";
     private static final String OUTPUT_FILE = "lab3_output1";
@@ -27,7 +27,7 @@ public class TFlightTableApp {
     }
 
     private static float getDelay(String[] val) {
-        return val[DELAY_ID_CLMN].isEmpty() ? 0 : Float.parseFloat(val[DELAY_ID_CLMN]);
+        return val[DELAY_CLMN].isEmpty() ? 0 : Float.parseFloat(val[DELAY_CLMN]);
     }
 
     private static int getCancel(String[] val) {
