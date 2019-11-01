@@ -11,7 +11,7 @@ public class TFlightTableApp {
     private static final int DELAY_ID_CLMN = 18;
     private static final int CANCEL_ID_CLMN = 19;
     private static final String AIRPORT_FILE = "L_AIRPORT_ID.csv";
-    private static final String FLIGHTS_FILE = 19;
+    private static final String FLIGHTS_FILE = "664600583_T_ONTIME_sample.csv";
     private static final String OUTPUT_FILE = 19;
 
     public static void main(String[] args) {
