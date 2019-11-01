@@ -26,7 +26,7 @@ public class TFlightTableApp {
                 filter(val -> !val[AIRPORT_ID_CLMN].equals("Code"));
         JavaRDD<String[]> flightClmn = sc.textFile(FLIGHTS_FILE).
                 map(TCsvParser::getColumns).
-                filter(val -> !val[AIRPORT_ID_CLMN].equals("Code"));
+                filter(val -> !val[CANCEL_ID_CLMN].equals("CANCELLED"));
 
 
     }
