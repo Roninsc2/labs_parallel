@@ -1,6 +1,6 @@
 package sparkLab;
 
-public class TCsvAirportParser {
+public class TCsvParser {
         private int id;
         private static final int INVALID_ID = -1;
         private static final String DELIMITER = ",";
@@ -9,7 +9,7 @@ public class TCsvAirportParser {
         private static final int END_ID_INDX = 6;
         private static final int ID_CLMN = 0;
 
-        public TCsvAirportParser(String text) {
+        public TCsvParser(String text) {
             String fileData = text.toString();
             String[] lines = fileData.split(DELIMITER);
             String idStr = lines[ID_CLMN];
@@ -18,10 +18,6 @@ public class TCsvAirportParser {
             } else {
                 id = INVALID_ID;
             }
-        }
-
-        public int getId() {
-            return id;
         }
     }
 
