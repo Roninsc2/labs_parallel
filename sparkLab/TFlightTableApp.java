@@ -19,6 +19,10 @@ public class TFlightTableApp {
         return Integer.parseInt(val[clmn]);
     }
 
+    private String getId(String[] val, int clmn) {
+        return Integer.parseInt(val[clmn]);
+    }
+
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
