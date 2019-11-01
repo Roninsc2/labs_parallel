@@ -1,11 +1,6 @@
 package sparkLab;
 
 public class TCsvAirportParser {
-package reduceSideJoin;
-
-import org.apache.hadoop.io.Text;
-
-    public class TCsvAirportReader {
         private int id;
         private static final int INVALID_ID = -1;
         private static final String DELIMITER = ",";
