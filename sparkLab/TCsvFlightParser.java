@@ -9,7 +9,7 @@ public class TCsvFlightParser {
     private static final int ID_CLMN = 14;
     private static final int DELAY_CLMN = 17;
 
-    public TCsvFlightReader(String text) {
+    public TCsvFlightParser(String text) {
         String[] lines = text.split(DELIMITER);
         String idStr = lines[ID_CLMN];
         delay = lines[DELAY_CLMN];
