@@ -1,4 +1,6 @@
 package sparkLab;
 
-public class TFlightDataCalc {
+import java.io.Serializable;
+
+public class TFlightDataCalc implements Serializable {
 }
