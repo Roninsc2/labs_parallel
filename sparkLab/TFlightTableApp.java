@@ -25,8 +25,8 @@ public class TFlightTableApp {
         return Integer.parseInt(val[clmn]);
     }
 
-    private static float getDelay(String[] val, int clmn) {
-        return Float.parseFloat(val[clmn]);
+    private static float getDelay(String[] val) {
+        return val[DELAY_ID_CLMN].isEmpty() ? 0 : Float.parseFloat(val[DELAY_ID_CLMN]);
     }
 
     private static int getDelay(String[] val, int clmn) {
