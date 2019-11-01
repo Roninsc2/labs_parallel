@@ -30,6 +30,6 @@ public class TFlightDataCalc implements Serializable {
         int newDelayCount = a.delayCount + b.delayCount;
         int newCancelCount = a.cancelCount + b.cancelCount;
         int newSumCount = a.sumCount + b.sumCount;
-        return TFlightDataCalc(newDelay, newDelayCount, newCancelCount, newSumCount);
+        return new TFlightDataCalc(newDelay, newDelayCount, newCancelCount, newSumCount);
     }
 }
