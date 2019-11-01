@@ -20,7 +20,7 @@ public class TFlightTableApp {
     }
 
     private String getName(String[] val) {
-        return AIRPORT_NAME_CLMN;
+        return val[AIRPORT_NAME_CLMN];
     }
 
     public static void main(String[] args) {
