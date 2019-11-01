@@ -14,5 +14,6 @@ public class TFlightDataCalc implements Serializable {
         }
         delay = d;
         cancelCount = c;
+        sumCount = 1;
     }
 }
