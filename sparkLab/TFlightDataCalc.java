@@ -36,7 +36,7 @@ public class TFlightDataCalc implements Serializable {
     public String toString() {
         int delayPart = (int)((float) delayCount/sumCount * 100);
         int cancelPart = (int)((float) cancelCount/sumCount * 100);
-        System.out.println(delayCount + " " + cancelCount + " " + sumCount "\n");
+        System.out.println(delayCount + " " + cancelCount + " " + sumCount + "\n");
         String res = "max delay: " + delay;
         res += " | delay part: " + delayPart;
         res += " | cancel part: " + cancelPart + ";";
