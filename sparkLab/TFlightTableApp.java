@@ -16,7 +16,7 @@ public class TFlightTableApp {
     private static final String OUTPUT_FILE = "lab3_output";
 
     private Integer getId(String[] val, int clmn) {
-
+        return Integer.parseInt(val[clmn]);
     }
 
     public static void main(String[] args) {
