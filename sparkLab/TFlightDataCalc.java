@@ -10,7 +10,7 @@ public class TFlightDataCalc implements Serializable {
 
     TFlightDataCalc(float d, int c) {
         delayCount = 0;
-        if (d > 0) {
+        if (d > 0.0) {
             delayCount = 1;
         }
         delay = d;
