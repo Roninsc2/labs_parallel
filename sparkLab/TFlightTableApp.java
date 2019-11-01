@@ -19,7 +19,7 @@ public class TFlightTableApp {
         return Integer.parseInt(val[clmn]);
     }
 
-    private String getNameString[] val, int clmn) {
+    private String getName(String[] val, int clmn) {
         return Integer.parseInt(val[clmn]);
     }
 
