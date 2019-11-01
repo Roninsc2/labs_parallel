@@ -8,7 +8,7 @@ public class TCsvFlightParser {
     private static final int ID_LEN = 5;
     private static final int DEST_CLMN = 14;
     private static final int ORIGIN_CLMN = 14;
-    private static final int DELAY_CLMN = 17;
+    private static final int DELAY_CLMN = 18;
 
     public TCsvFlightParser(String text) {
         String[] lines = text.split(DELIMITER);
