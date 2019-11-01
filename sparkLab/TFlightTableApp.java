@@ -7,6 +7,9 @@ public class TFlightTableApp {
     private static final int AIRPORT_ID_CLMN = 0;
     private static final int AIRPORT_NAME_CLMN = 1;
     private static final int ORIGIN_ID_CLMN = 0;
+    private static final int DEST_ID_CLMN = 0;
+    private static final int DELAY_ID_CLMN = 0;
+    private static final int ORIGIN_ID_CLMN = 0;
 
 
     public static void main(String[] args) {
