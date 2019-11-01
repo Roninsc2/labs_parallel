@@ -62,5 +62,7 @@ public class TFlightTableApp {
 
         JavaRDD<String> result = dataCalc.map(val -> airportBroadcast.value().get(val._1._1) + " | " +
                 airportBroadcast.value().get(val._1._2) + " | " + val._2.toString());
+
+        result.saveAsTextFile(OUTPUT_FILE);
     }
 }
