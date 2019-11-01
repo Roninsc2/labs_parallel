@@ -22,5 +22,6 @@ public class TFlightDataCalc implements Serializable {
         float newDelay = Float.max(a.delay, b.delay);
         int newDelayCount = a.delayCount + b.delayCount;
         int newCancelCount = a.cancelCount + b.cancelCount;
+        int newSumCount = a.sumCount + b.sumCount;
     }
 }
