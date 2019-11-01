@@ -61,6 +61,6 @@ public class TFlightTableApp {
                 mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val))).collectAsMap());
 
         JavaRDD<String> result = dataCalc.map(val -> airportBroadcast.value().get(val._1._1) + " | " +
-                + airportBroadcast.value().get(val._1._2) + " | " + val._2.toString());
+                airportBroadcast.value().get(val._1._2) + " | " + val._2.toString());
     }
 }
