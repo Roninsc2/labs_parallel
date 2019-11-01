@@ -3,7 +3,8 @@ package sparkLab;
 public class TCsvAirportParser {
         private int id;
         private static final int INVALID_ID = -1;
-        private static final String DELIMITER = ",";
+        private static final String COMMA = ",";
+        private static final
         private static final int ID_LEN = 7;
         private static final int BEGIN_ID_INDX = 1;
         private static final int END_ID_INDX = 6;
