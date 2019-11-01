@@ -12,7 +12,7 @@ public class TFlightTableApp {
     private static final int CANCEL_ID_CLMN = 19;
     private static final String AIRPORT_FILE = "L_AIRPORT_ID.csv";
     private static final String FLIGHTS_FILE = "664600583_T_ONTIME_sample.csv";
-    private static final String OUTPUT_FILE = 19;
+    private static final String OUTPUT_FILE = "lab3_output";
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab3");
