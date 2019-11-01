@@ -5,9 +5,6 @@ public class TCsvAirportParser {
         private static final int INVALID_ID = -1;
         private static final String COMMA = ",";
         private static final String QOUTES = "\"";
-        private static final int ID_LEN = 7;
-        private static final int BEGIN_ID_INDX = 1;
-        private static final int END_ID_INDX = 6;
         private static final int ID_CLMN = 0;
 
         public TCsvAirportParser(String text) {
