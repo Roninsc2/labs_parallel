@@ -1,6 +1,6 @@
 package sparkLab;
 
-import org.apache.spa
+import org.apache.spark.SparkConf
 
 public class TFlightTableApp {
     public static void main(String[] args) {
