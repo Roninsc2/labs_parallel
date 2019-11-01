@@ -34,10 +34,6 @@ public class TFlightTableApp {
         return (int) Float.parseFloat(val[CANCEL_ID_CLMN]);
     }
 
-    private static int getDelay(String[] val, int clmn) {
-        return Integer.parseInt(val[clmn]);
-    }
-
     private static String getName(String[] val) {
         if (val.length == 3) {
             return val[AIRPORT_NAME_CLMN] + val[AIRPORT_NAME_CLMN + 1];
@@ -59,7 +55,7 @@ public class TFlightTableApp {
         JavaPairRDD<Tuple2<Integer, Integer>, TFlightDataCalc> dataCalc = flightClmn.mapToPair(val -> new Tuple2<>(
                 new Tuple2<>(getId(val, ORIGIN_ID_CLMN), getId(val, DEST_ID_CLMN)),
                 new TFlightDataCalc(getDelay(val), getCancel(val)))).reduceByKey(TFlightDataCalc::calculate);
-        
+
 
         final Broadcast<Map<Integer, String>> airportBroadcast = sc.broadcast(airportClmn.
                 mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val))).collectAsMap());
