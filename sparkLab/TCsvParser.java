@@ -6,6 +6,6 @@ public class TCsvParser {
         private static final String NULL_STR = "";
 
         static String[] getColumns(String line) {
-            return line.replaceAll("\"", )
+            return line.replaceAll("\"", NULL_STR).split(COMMA);
         }
 }
