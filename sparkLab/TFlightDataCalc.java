@@ -18,10 +18,18 @@ public class TFlightDataCalc implements Serializable {
         sumCount = 1;
     }
 
+    TFlightDataCalc(float d, int dCount, int c, int sum) {
+        delayCount = dCount;
+        delay = d;
+        cancelCount = c;
+        sumCount = sum;
+    }
+
     static TFlightDataCalc calculate(TFlightDataCalc a, TFlightDataCalc b) {
         float newDelay = Float.max(a.delay, b.delay);
         int newDelayCount = a.delayCount + b.delayCount;
         int newCancelCount = a.cancelCount + b.cancelCount;
         int newSumCount = a.sumCount + b.sumCount;
+        return TFlightDataCalc()
     }
 }
