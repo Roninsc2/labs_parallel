@@ -56,7 +56,7 @@ public class TFlightTableApp {
                 map(TCsvParser::getColumns).
                 filter(val -> !val[CANCEL_ID_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
 
-        JavaPairRDD<Tuple2<Integer, Integer>, TFlightDataCalc>flightClmn.mapToPair(val -> new Tuple2<>(new Tuple2<>(getId(val, ORIGIN_ID_CLMN), getId(val, DEST_ID_CLMN)),
+        JavaPairRDD<Tuple2<Integer, Integer>, TFlightDataCalc> = flightClmn.mapToPair(val -> new Tuple2<>(new Tuple2<>(getId(val, ORIGIN_ID_CLMN), getId(val, DEST_ID_CLMN)),
                                                 new TFlightDataCalc(getDelay(val), getCancel(val)))).reduceByKey(TFlightDataCalc::calculate);
 
         final Broadcast<Map<Integer, String>> airportBroadcast = sc.broadcast(airportClmn.
