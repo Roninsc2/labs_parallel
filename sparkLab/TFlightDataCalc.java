@@ -34,7 +34,7 @@ public class TFlightDataCalc implements Serializable {
     }
 
     public String toString() {
-        delay
+        delayPart
         return "max delay: " + delay + " " +
     }
 }
