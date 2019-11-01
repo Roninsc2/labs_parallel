@@ -1,8 +1,6 @@
 package sparkLab;
 
 public class TCsvParser {
-        private int id;
-        private static final int INVALID_ID = -1;
         private static final String COMMA = ",";
         private static final String QUOTES = "\"";
 
