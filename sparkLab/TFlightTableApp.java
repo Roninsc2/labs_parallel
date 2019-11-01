@@ -37,7 +37,7 @@ public class TFlightTableApp {
         JavaRDD<String[]> flightClmn = sc.textFile(FLIGHTS_FILE).
                 map(TCsvParser::getColumns).
                 filter(val -> !val[CANCEL_ID_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
-
+        
 
     }
 }
