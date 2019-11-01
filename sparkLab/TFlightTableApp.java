@@ -15,11 +15,11 @@ public class TFlightTableApp {
     private static final String FLIGHTS_FILE = "664600583_T_ONTIME_sample.csv";
     private static final String OUTPUT_FILE = "lab3_output";
 
-    private Integer getId(String[] val, int clmn) {
+    private static Integer getId(String[] val, int clmn) {
         return Integer.parseInt(val[clmn]);
     }
 
-    private String getName(String[] val) {
+    private static String getName(String[] val) {
         if (val.length == 3) {
             return val[AIRPORT_NAME_CLMN] + val[AIRPORT_NAME_CLMN + 1];
         }
