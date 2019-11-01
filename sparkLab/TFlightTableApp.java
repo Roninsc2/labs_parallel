@@ -21,6 +21,7 @@ public class TFlightTableApp {
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> airportFile = sc.textFIle(AIRPORT_FILE);
+        JavaRDD<String[]> airportColmn = sc.textFIle(AIRPORT_FILE);
+
     }
 }
