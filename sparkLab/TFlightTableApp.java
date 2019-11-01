@@ -50,7 +50,7 @@ public class TFlightTableApp {
                 filter(val -> !val[AIRPORT_ID_CLMN].equals(FIRST_LINE_CHECK_AIRPORT));
         JavaRDD<String[]> flightClmn = sc.textFile(FLIGHTS_FILE).
                 map(TCsvParser::getColumns).
-                filter(val -> !val[CANCEL_ID_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
+                filter(val -> !val[CANCEL_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
 
         JavaPairRDD<Tuple2<Integer, Integer>, TFlightDataCalc> dataCalc = flightClmn.mapToPair(val -> new Tuple2<>(
                 new Tuple2<>(getId(val, ORIGIN_ID_CLMN), getId(val, DEST_ID_CLMN)),
