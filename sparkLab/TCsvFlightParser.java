@@ -12,7 +12,7 @@ public class TCsvFlightParser {
 
     public TCsvFlightParser(String text) {
         String[] lines = text.split(DELIMITER);
-        String idStr = lines[ID_CLMN];
+        String idStr = lines[DEST_CLMNCLMN];
         delay = lines[DELAY_CLMN];
         if (idStr.length() == ID_LEN && delay.length() > 0) {
             id = Integer.parseInt(idStr);
