@@ -19,8 +19,8 @@ public class TFlightTableApp {
         return Integer.parseInt(val[clmn]);
     }
 
-    private String getName(String[] val, int clmn) {
-        return Integer.parseInt(val[clmn]);
+    private String getName(String[] val) {
+        return AIRPORT_NAME_CLMN;
     }
 
     public static void main(String[] args) {
