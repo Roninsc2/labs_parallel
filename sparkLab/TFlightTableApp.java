@@ -1,8 +1,7 @@
 package sparkLab;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.JavaPairRDD;
-import org.apache.spark.api.JavaPairRDD;
+import org.apache.spark.api.java.JavaSparkContext;
 
 public class TFlightTableApp {
     public static void main(String[] args) {
