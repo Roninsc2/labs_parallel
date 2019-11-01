@@ -8,7 +8,7 @@ public class TCsvAirportParser {
         private static final int ID_LEN = 7;
         private static final int ID_CLMN = 0;
 
-        public TCsvAirportParser(String tsext) {
+        public TCsvAirportParser(String text) {
             String fileData = text.toString();
             String[] lines = fileData.split(COMMA);
             String idStr = lines[ID_CLMN];
