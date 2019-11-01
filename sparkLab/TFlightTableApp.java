@@ -6,7 +6,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class TFlightTableApp {
     private static final int AIRPORT_ID_CLMN = 0;
     private static final int AIRPORT_NAME_CLMN = 1;
-    private static final int ID_CLMN = 0;
+    private static final int ORIGIN_ID_CLMN = 0;
 
 
     public static void main(String[] args) {
