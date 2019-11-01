@@ -31,7 +31,7 @@ public class TFlightTableApp {
     }
 
     private static int getCancel(String[] val) {
-        return (int) Float.parseFloat(val[CANCEL_ID_CLMN]);
+        return (int) Float.parseFloat(val[CANCEL_CLMN]);
     }
 
     private static String getName(String[] val) {
