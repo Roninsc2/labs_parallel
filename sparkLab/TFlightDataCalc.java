@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class TFlightDataCalc implements Serializable {
     private float delay;
     private int delayCount;
-    private int cancel;
+    private int cancelCount;
     private int count;
 
     TFlightDataCalc(float d, int c) {
