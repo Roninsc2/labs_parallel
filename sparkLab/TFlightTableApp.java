@@ -20,7 +20,8 @@ public class TFlightTableApp {
     }
 
     private String getName(String[] val) {
-        return val[AIRPORT_NAME_CLMN];
+        if (val.length == 3)
+        return val[AIRPORT_NAME_CLMN] + val[AIRPORT_NAME_CLMN + 1];
     }
 
     public static void main(String[] args) {
