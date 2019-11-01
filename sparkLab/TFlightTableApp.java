@@ -4,6 +4,9 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
+import scala.Tuple2;
+
+import java.util.Map;
 
 public class TFlightTableApp {
     private static final int AIRPORT_ID_CLMN = 0;
@@ -39,7 +42,7 @@ public class TFlightTableApp {
                 map(TCsvParser::getColumns).
                 filter(val -> !val[CANCEL_ID_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
 
-        final Broadcast<Map<>
+        final Broadcast<Map<Integer, String>> airportBroadcast = airportClmn.mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val)));
 
     }
 }
