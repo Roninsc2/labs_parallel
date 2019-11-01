@@ -6,7 +6,8 @@ public class TCsvFlightParser {
     private static final int INVALID_ID = -1;
     private static final String DELIMITER = ",";
     private static final int ID_LEN = 5;
-    private static final int ID_CLMN = 14;
+    private static final int DEST_CLMN = 14;
+
     private static final int DELAY_CLMN = 17;
 
     public TCsvFlightParser(String text) {
