@@ -9,7 +9,7 @@ public class TCsvAirportParser {
         private static final int ID_CLMN = 0;
 
         public TCsvAirportParser(String text) {
-            String[] lines = fileData.split(COMMA);
+            String[] lines = text.split(COMMA);
             String idStr = lines[ID_CLMN];
             if (idStr.length() == ID_LEN) {
                 id = Integer.parseInt(idStr.substring(BEGIN_ID_INDX, END_ID_INDX));
