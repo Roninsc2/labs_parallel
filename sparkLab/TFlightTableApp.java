@@ -20,7 +20,12 @@ public class TFlightTableApp {
     private static final String OUTPUT_FILE = "lab3_output";
     private static final String FIRST_LINE_CHECK_AIRPORT = "Code";
     private static final String FIRST_LINE_CHECK_FLIGHTS = "CANCELLED";
+
     private static Integer getId(String[] val, int clmn) {
+        return Integer.parseInt(val[clmn]);
+    }
+
+    private static int getDelay(String[] val, int clmn) {
         return Integer.parseInt(val[clmn]);
     }
 
