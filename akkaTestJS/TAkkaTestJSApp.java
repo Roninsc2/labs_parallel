@@ -2,5 +2,6 @@ package akkaTestJS;
 
 public class TAkkaTestJSApp {
 
-    private static final String ROOT_ACTOR_NAME = "rootActor";
+    private static final String ROOT_ACTOR = "rootActor";
+    private static final String STORAGE_ACTOR = "storageActor"
 }
