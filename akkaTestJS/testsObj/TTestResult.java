@@ -14,4 +14,7 @@ public class TTestResult {
     @JsonProperty("success")
     private boolean isSuccess;
     private String result;
+    private String name;
+    private String expectedRes;
+
 }
