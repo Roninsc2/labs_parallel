@@ -49,5 +49,5 @@ public class TPacketTestResult {
     public void setSuccess(boolean successFlag) {
         isSuccess = successFlag;
     }
-    
+
 }
