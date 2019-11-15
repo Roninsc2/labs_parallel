@@ -23,7 +23,7 @@ public class TTest {
     }
 
     public void setExpectedResult(String exRes) {
-        expectedRes = exRes;
+        expectedResult = exRes;
     }
 
     public void setParams(Object[] p) {
