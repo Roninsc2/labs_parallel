@@ -25,4 +25,8 @@ public class TPacketTestResult {
             }
         }
     }
+
+    public String getPackageId() {
+        return packageId;
+    }
 }
