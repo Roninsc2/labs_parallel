@@ -41,6 +41,8 @@ public class TTestResult {
         isSuccess = successFlag;
     }
 
-    public void 
+    public void setResult(String result) {
+        
+    }
 
 }
