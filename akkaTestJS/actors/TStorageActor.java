@@ -33,6 +33,7 @@ public class TStorageActor extends AbstractActor {
                         sender().tell(ERROR_404, self());
                     }
                 })
+                .build();
 
                 )
     }
