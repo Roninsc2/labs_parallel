@@ -15,4 +15,8 @@ public class TRootActor extends AbstractActor {
             new RoundRobinPool(INITIAL_POOL_SIZE).props(Props.create(TTestRunActor.class))
     );
 
+    public Receive createReceive() {
+
+    }
+
 }
