@@ -29,4 +29,8 @@ public class TPacketTestResult {
     public String getPackageId() {
         return packageId;
     }
+
+    public void setTestResults(TTestResult[] results) {
+        testResults = results;
+    }
 }
