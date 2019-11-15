@@ -30,7 +30,19 @@ public class TPacketTestResult {
         return packageId;
     }
 
+    public TTestResult[] getTestResults() {
+        return testResults;
+    }
+
+    public boolean isSuccess() {
+        return isSuccess;
+    }
+
+    public 
+
     public void setTestResults(TTestResult[] results) {
         testResults = results;
     }
+
+    p
 }
