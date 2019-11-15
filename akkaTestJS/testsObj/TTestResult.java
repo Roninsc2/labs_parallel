@@ -53,4 +53,8 @@ public class TTestResult {
         expectedRes = exRes;
     }
 
+    public void setParams(Object[] p) {
+        params = p;
+    }
+
 }
