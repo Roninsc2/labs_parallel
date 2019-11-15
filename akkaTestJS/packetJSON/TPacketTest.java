@@ -28,4 +28,8 @@ public class TPacketTest {
     public String getJsScript() {
         return jsScript;
     }
+
+    public String getFunctionName() {
+        return functionName;
+    }
 }
