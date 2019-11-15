@@ -23,6 +23,7 @@ public class TAkkaTestJSApp {
 
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
+        THttpRouter router = new THttpRouter();
 
     }
 }
