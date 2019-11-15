@@ -27,6 +27,8 @@ public class TStorageActor extends AbstractActor {
                                 val.getPackageId(),
                                 results.toArray(new TTestResult[0])
                         );
+
+                        sender().tell(pktResult, self());
                     }
                 })
 
