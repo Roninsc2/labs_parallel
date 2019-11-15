@@ -24,4 +24,8 @@ public class TPacketTest {
     public String getPackageId() {
         return packageId;
     }
+
+    public String getJsScript() {
+        return jsScript;
+    }
 }
