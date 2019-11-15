@@ -14,7 +14,7 @@ public class TRootActor extends AbstractActor {
 
     private static final int INITIAL_POOL_SIZE = 3;
 
-    private ActorRef storageActor = getContext().actorOf(Props.create(TStorageActor.class), TAkkaTestJSApp.STORAGE_ACTOR);
+    private ActorRef storageActor = getContext().actorOf(Props.create(TStorageActor.class));
     private ActorRef testRouter = getContext().actorOf(
             new RoundRobinPool(INITIAL_POOL_SIZE).props(Props.create(TTestRunActor.class))
     );

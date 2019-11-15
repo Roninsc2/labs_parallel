@@ -15,7 +15,6 @@ public class TTestRunActor extends AbstractActor {
 
     private static final String ENGINE_NAME = "nashorn";
     private static final String ERROR_RUNTIME = "RUNTIME ERROR";
-    private static final String PATH_TO_STORAGE_ACTOR = "/user/" + TAkkaTestJSApp.ROOT_ACTOR + "/" + TAkkaTestJSApp.STORAGE_ACTOR;
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
