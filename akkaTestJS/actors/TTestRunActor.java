@@ -11,6 +11,7 @@ import javax.script.ScriptEngineManager;
 public class TTestRunActor extends AbstractActor {
 
     private static final String ENGINE_NAME = "nashorn";
+    private static final String ERROR_RUNTIME = "nashorn";
 
     public Receive createRecive() {
         return ReceiveBuilder.create()
@@ -18,6 +19,12 @@ public class TTestRunActor extends AbstractActor {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
                     TTest test = val.getTests()[0];
                     String res;
+
+                    try {
+
+                    } catch (Exception ex) {
+                        res =
+                    }
                         }
 
                 )
