@@ -41,5 +41,7 @@ public class TAkkaTestJSApp {
                 ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
+
+        System.out.println(START_MESSAGE);
     }
 }
