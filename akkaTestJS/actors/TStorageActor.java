@@ -25,7 +25,8 @@ public class TStorageActor extends AbstractActor {
                         results.sort(Comparator.comparing(TTestResult::getName));
                         TPacketTestResult pktResult = new TPacketTestResult(
                                 val.getPackageId(),
-                                results.toArray(new TTestResult[0]))
+                                results.toArray(new TTestResult[0])
+                        );
                     }
                 })
 
