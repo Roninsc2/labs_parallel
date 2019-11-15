@@ -18,10 +18,10 @@ public class TTestResult {
     private String expectedRes;
     private Object[] params;
 
-    public TTestResult(){
+    public TTestResult() {
     }
 
-    public TTestResult(){
+    public TTestResult(String id, String n, boolean isOk, ) {
     }
 
 }
