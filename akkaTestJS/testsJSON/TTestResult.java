@@ -1,4 +1,4 @@
-package akkaTestJS.testsObj;
+package akkaTestJS.testsJSON;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
