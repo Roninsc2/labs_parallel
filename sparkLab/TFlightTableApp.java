@@ -52,16 +52,18 @@ public class TFlightTableApp {
                 map(TCsvParser::getColumns).
                 filter(val -> !val[CANCEL_CLMN].equals(FIRST_LINE_CHECK_FLIGHTS));
 
-        JavaPairRDD<Tuple2<Integer, Integer>, TFlightDataCalc> dataCalc = flightClmn.mapToPair(val -> new Tuple2<>(
-                new Tuple2<>(getId(val, ORIGIN_ID_CLMN), getId(val, DEST_ID_CLMN)),
-                new TFlightDataCalc(getDelay(val), getCancel(val)))).reduceByKey(TFlightDataCalc::calculate);
-
+        JavaPairRDD<Tuple2<Integer, Integer>, TFlightData> flightTable = flightClmn.mapToPair(
+                val -> new Tuple2<>(
+                        new Tuple2<>(getId(val, ORIGIN_ID_CLMN), getId(val, DEST_ID_CLMN)),
+                        new TFlightData(getDelay(val), getCancel(val))
+                )
+        ).reduceByKey(TFlightData::calculate);
 
         final Broadcast<Map<Integer, String>> airportBroadcast = sc.broadcast(airportClmn.
                 mapToPair(val -> new Tuple2<>(getId(val, AIRPORT_ID_CLMN), getName(val))).collectAsMap());
 
-        JavaRDD<String> result = dataCalc.map(val -> airportBroadcast.value().get(val._1._1) + " | " +
-                airportBroadcast.value().get(val._1._2) + " | " + val._2.toString());
+        JavaRDD<String> result = flightTable.map(val -> airportBroadcast.value().get(val._1._1) + " | " +
+                airportBroadcast.value().get(val._1._2) + " | " + val._2.getStringData());
 
         result.saveAsTextFile(OUTPUT_FILE);
     }
