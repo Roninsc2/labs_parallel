@@ -43,5 +43,6 @@ public class TAkkaTestJSApp {
         );
 
         System.out.println(START_MESSAGE);
+        System.in.read();
     }
 }
