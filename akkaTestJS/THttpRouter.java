@@ -1,8 +1,10 @@
 package akkaTestJS;
 
 import akka.actor.ActorRef;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akkaTestJS.packetJSON.TPacketTest;
 
 public class THttpRouter extends AllDirectives {
     private static final String TEST_STARTED = "TEST STARTED";
@@ -15,6 +17,15 @@ public class THttpRouter extends AllDirectives {
     }
 
     Route createRoute(ActorRef rootActor) {
-        return route()
+        return route(
+          path(TEST_PATH, () ->
+                  post(() ->
+                          entity(Jackson.unmarshaller(TPacketTest.class), val -> {
+                              rootActor.tell(val, ActorRef.noSender());
+                              return complete(TEST_STARTED);
+                          })
+
+          )
+        );
     }
 }
