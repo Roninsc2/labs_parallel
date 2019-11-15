@@ -13,6 +13,6 @@ public class TAkkaTestJSApp {
     private static final String START_MESSAGE = "Server starts, http://" + HOST + ":" + PORT "/\n";
 
     public static void main(String[] args) throws Exception {
-        ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM)
+        ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
     }
 }
