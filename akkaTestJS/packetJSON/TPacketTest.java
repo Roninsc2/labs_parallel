@@ -9,5 +9,5 @@ public class TPacketTest {
     private String packageId;
     private String jsScript;
     private String functionName;
-    private Test[] tests;
+    private TTest[] tests;
 }
