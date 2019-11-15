@@ -32,4 +32,8 @@ public class TPacketTest {
     public String getFunctionName() {
         return functionName;
     }
+
+    public TTest[] getTests() {
+        return tests;
+    }
 }
