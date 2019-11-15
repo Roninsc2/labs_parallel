@@ -22,7 +22,7 @@ public class TTest {
         name = n;
     }
 
-    public void setExpectedRes(String exRes) {
+    public void setExpectedResult(String exRes) {
         expectedRes = exRes;
     }
 
