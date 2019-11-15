@@ -5,7 +5,7 @@ import akka.japi.pf.ReceiveBuilder;
 
 public class TStorageActor extends AbstractActor {
 
-    private static final ERROR_404 = "ERROR 404";
+    private static final Stirng ERROR_404 = "ERROR 404";
     public Receive createRecive() {
 
     }
