@@ -3,6 +3,9 @@ package akkaTestJS.actors;
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 import akkaTestJS.testsJSON.TTestResult;
+import akkaTestJS.packetJSON.TResultPackageID;
+import akkaTestJS.packetJSON.TPacketTestResult;
+
 
 import java.util.*;
 
