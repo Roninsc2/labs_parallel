@@ -61,4 +61,8 @@ public class TTestResult {
         return packageId;
     }
 
+    public String getName() {
+        return name;
+    }
+
 }
