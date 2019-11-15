@@ -12,5 +12,7 @@ public class TTest {
     public TTest() {
     }
 
-    private TTest(String n, String exRes, )
+    public TTest(String n, String exRes, Object[] p) {
+
+    }
 }
