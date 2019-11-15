@@ -35,6 +35,7 @@ public class TRootActor extends AbstractActor {
                 })
                 .match(TResultPackageID.class, val -> {
                     storageActor.tell(val, sender());
+                    System.out.println();
                 })
                 .build();
     }
