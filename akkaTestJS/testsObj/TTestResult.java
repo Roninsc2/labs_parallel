@@ -21,13 +21,14 @@ public class TTestResult {
     public TTestResult() {
     }
 
-    public TTestResult(String id, String n, boolean isOk,
+    public TTestResult(String id, String n, boolean successFlag,
                        String res, String exRes,
                        Object[] p)
     {
         packageId = id;
         name = n;
         isSuccess = isOk;
+
     }
 
 }
