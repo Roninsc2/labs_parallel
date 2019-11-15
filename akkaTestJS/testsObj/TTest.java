@@ -25,4 +25,8 @@ public class TTest {
     public void setExpectedRes(String exRes) {
         expectedRes = exRes;
     }
+
+    public void setParams(Object[] p) {
+        
+    }
 }
