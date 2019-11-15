@@ -33,4 +33,8 @@ public class TTest {
     public String getName() {
         return name;
     }
+
+    public String getExpectedRes() {
+        return expectedRes;
+    }
 }
