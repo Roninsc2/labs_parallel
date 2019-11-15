@@ -3,6 +3,7 @@ package akkaTestJS;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.http.javadsl.Http;
 import akkaTestJS.actors.TRootActor;
 
 public class TAkkaTestJSApp {
@@ -18,6 +19,8 @@ public class TAkkaTestJSApp {
     public static void main(String[] args) throws Exception {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
         ActorRef rootActor = sys.actorOf(Props.create(TRootActor.class), ROOT_ACTOR);
-        
+
+        final Http http = Http.get(sys);
+
     }
 }
