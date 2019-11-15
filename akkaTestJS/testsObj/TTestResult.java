@@ -29,6 +29,7 @@ public class TTestResult {
         name = n;
         isSuccess = successFlag;
         result = res;
+        expectedRes = exRes;
 
     }
 
