@@ -77,4 +77,9 @@ public class TTestResult {
         return isSuccess;
     }
 
+    public Object[] getParams() {
+        return params;
+    }
+
+
 }
