@@ -7,7 +7,6 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akkaTestJS.packetJSON.TPacketTest;
 import akkaTestJS.packetJSON.TResultPackageID;
-import scala.concurrent.Future;
 
 public class THttpRouter extends AllDirectives {
     private static final String TEST_STARTED = "TEST STARTED";
