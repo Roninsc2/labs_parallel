@@ -21,4 +21,7 @@ public class TTestResult {
     public TTestResult(){
     }
 
+    public TTestResult(){
+    }
+
 }
