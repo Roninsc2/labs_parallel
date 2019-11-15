@@ -11,7 +11,7 @@ import javax.script.ScriptEngineManager;
 public class TTestRunActor extends AbstractActor {
 
     private static final String ENGINE_NAME = "nashorn";
-    private static final String ERROR_RUNTIME = "nashorn";
+    private static final String ERROR_RUNTIME = "RUNTIME ERROR";
 
     public Receive createRecive() {
         return ReceiveBuilder.create()
