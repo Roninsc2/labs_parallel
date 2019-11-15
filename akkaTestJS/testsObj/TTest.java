@@ -21,4 +21,8 @@ public class TTest {
     public void setName(String n) {
         name = n;
     }
+
+    public void setExpectedRes(String exRes) {
+        expectedRes = exRes;
+    }
 }
