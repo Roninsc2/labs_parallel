@@ -4,7 +4,12 @@ import akka.actor.ActorRef;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import akkaTestJS.packetJSON.TPacketTest;
+import akkaTestJS.packetJSON.TResultPackageID;
+
+import java.util.concurrent.Future;
+import java.util.regex.Pattern;
 
 public class THttpRouter extends AllDirectives {
     private static final String TEST_STARTED = "TEST STARTED";
@@ -24,7 +29,14 @@ public class THttpRouter extends AllDirectives {
                               rootActor.tell(val, ActorRef.noSender());
                               return complete(TEST_STARTED);
                           })
-
+                  )
+          ),
+          path(RESULT_PATH, () ->
+                  get(() ->
+                          parameter(PARAMETER_PACKAGE_ID, val -> {
+                              Future<Object> result = Patterns.ask(rootActor, new TResultPackageID(val), TIMEOUT);
+                          })
+                  )
           )
         );
     }
