@@ -37,6 +37,10 @@ public class TTestResult {
         packageId = id;
     }
 
+    public void setName(String n) {
+        name = n;
+    }
+
     public void setSuccess(boolean successFlag) {
         isSuccess = successFlag;
     }
