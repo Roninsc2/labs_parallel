@@ -34,8 +34,8 @@ public class TTest {
         return name;
     }
 
-    public String getExpectedRes() {
-        return expectedRes;
+    public String getExpectedResult() {
+        return expectedResult;
     }
 
     public Object[] getParams() {
