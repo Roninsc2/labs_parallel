@@ -4,7 +4,7 @@ import akka.actor.AbstractActor;
 
 public class TTestRunActor extends AbstractActor {
 
-    public AbstractActor.Receive createRecive() {
+    public Receive createRecive() {
 
     }
 }
