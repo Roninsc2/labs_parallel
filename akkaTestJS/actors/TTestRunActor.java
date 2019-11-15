@@ -1,4 +1,10 @@
 package akkaTestJS.actors;
 
-public class TTestRunActor {
+import akka.actor.AbstractActor;
+
+public class TTestRunActorextends AbstractActor {
+
+    public AbstractActor.Receive createRecive() {
+
+    }
 }
