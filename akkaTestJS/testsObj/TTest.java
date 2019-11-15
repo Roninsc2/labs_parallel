@@ -37,4 +37,8 @@ public class TTest {
     public String getExpectedRes() {
         return expectedRes;
     }
+
+    public Object[] getParams() {
+        return params;
+    }
 }
