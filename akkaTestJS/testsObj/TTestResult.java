@@ -27,7 +27,7 @@ public class TTestResult {
     {
         packageId = id;
         name = n;
-        isSuccess = isOk;
+        isSuccess = successFlag;
 
     }
 
