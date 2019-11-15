@@ -35,6 +35,7 @@ public class THttpRouter extends AllDirectives {
                   get(() ->
                           parameter(PARAMETER_PACKAGE_ID, val -> {
                               Future<Object> result = Patterns.ask(rootActor, new TResultPackageID(val), TIMEOUT);
+                              return completeOKWithFuture(result, Jackson.marshaller());
                           })
                   )
           )
