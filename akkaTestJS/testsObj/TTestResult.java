@@ -21,7 +21,7 @@ public class TTestResult {
     public TTestResult() {
     }
 
-    public TTestResult(String id, String n, boolean isOk, ) {
+    public TTestResult(String id, String n, boolean isOk, String res, String exRes, Object[] params) {
     }
 
 }
