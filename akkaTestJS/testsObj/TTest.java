@@ -7,4 +7,5 @@ public class TTest {
 
     private String name;
     private String expectedRes;
+    private Object[] params;
 }
