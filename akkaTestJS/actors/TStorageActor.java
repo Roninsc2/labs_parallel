@@ -34,7 +34,5 @@ public class TStorageActor extends AbstractActor {
                     }
                 })
                 .build();
-
-                )
     }
 }
