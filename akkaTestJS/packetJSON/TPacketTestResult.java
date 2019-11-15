@@ -38,7 +38,9 @@ public class TPacketTestResult {
         return isSuccess;
     }
 
-    public 
+    public void setPackageId(String id) {
+        packageId = id;
+    }
 
     public void setTestResults(TTestResult[] results) {
         testResults = results;
