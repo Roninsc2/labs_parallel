@@ -65,4 +65,8 @@ public class TTestResult {
         return name;
     }
 
+    public String getResult() {
+        return result;
+    }
+
 }
