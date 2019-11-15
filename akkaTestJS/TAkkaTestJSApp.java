@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
+import akka.stream.ActorMaterializer;
 import akkaTestJS.actors.TRootActor;
 
 public class TAkkaTestJSApp {
@@ -21,6 +22,7 @@ public class TAkkaTestJSApp {
         ActorRef rootActor = sys.actorOf(Props.create(TRootActor.class), ROOT_ACTOR);
 
         final Http http = Http.get(sys);
+        final ActorMaterializer materializer = ActorMaterializer.create(sys);
 
     }
 }
