@@ -24,7 +24,7 @@ public class TTestRunActor extends AbstractActor {
                     String res;
 
                     try {
-
+                        engine.eval(val.getJsScript());
                     } catch (Exception ex) {
                         res = ERROR_RUNTIME;
                     }
@@ -39,8 +39,7 @@ public class TTestRunActor extends AbstractActor {
                                     test.getParams()
                             ), self()
                             );
-                        }
-
-                )
+                })
+                .build();
     }
 }
