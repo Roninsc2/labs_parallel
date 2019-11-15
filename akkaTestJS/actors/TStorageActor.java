@@ -21,7 +21,9 @@ public class TStorageActor extends AbstractActor {
                 })
                 .match(TResultPackageID.class, val -> {
                     List<TTestResult> results = storage.get(val.getPackageId());
-                    if (results != null)
+                    if (results != null) {
+                        results.sort(Comparator.comparing(TTestResult::getName));
+                    }
                 })
 
                 )
