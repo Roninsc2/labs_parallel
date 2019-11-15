@@ -18,4 +18,7 @@ public class TTestResult {
     private String expectedRes;
     private Object[] params;
 
+    public TTestResult(){
+    }
+
 }
