@@ -20,4 +20,8 @@ public class TPacketTest {
         functionName = fName;
         tests = t;
     }
+
+    public String getPackageId() {
+        return packageId;
+    }
 }
