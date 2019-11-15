@@ -18,7 +18,11 @@ public class TStorageActor extends AbstractActor {
                 .match(TTestResult.class, val -> {
                     storage.computeIfAbsent(val.getPackageId(), k -> new ArrayList<>());
                     storage.get(val.getPackageId()).add(val);
-                        }
+                })
+                .match(TResultPackageID.class, val -> {
+                    List<TTestResult> results = storage.get(val.getPackageId());
+                    if (results != null)
+                })
 
                 )
     }
