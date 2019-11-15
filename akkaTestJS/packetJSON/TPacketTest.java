@@ -10,4 +10,5 @@ public class TPacketTest {
     private String jsScript;
     private String functionName;
     private TTest[] tests;
+    
 }
