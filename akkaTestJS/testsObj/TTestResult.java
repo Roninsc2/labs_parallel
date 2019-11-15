@@ -28,6 +28,7 @@ public class TTestResult {
         packageId = id;
         name = n;
         isSuccess = successFlag;
+        result = res;
 
     }
 
