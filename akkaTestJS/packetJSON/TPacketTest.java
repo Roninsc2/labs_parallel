@@ -52,5 +52,5 @@ public class TPacketTest {
     public void setTests(TTest[] t) {
         tests = t;
     }
-    
+
 }

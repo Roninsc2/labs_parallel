@@ -5,4 +5,6 @@ import akkaTestJS.testsJSON.TTestResult;
 
 @JsonAutoDetect
 public class TPacketTestResult {
+
+    private String packageId;
 }
