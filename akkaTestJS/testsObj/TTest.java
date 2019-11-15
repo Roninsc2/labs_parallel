@@ -17,4 +17,8 @@ public class TTest {
         expectedRes = exRes;
         params = p;
     }
+
+    public void setName(String n) {
+        name = n;
+    }
 }
