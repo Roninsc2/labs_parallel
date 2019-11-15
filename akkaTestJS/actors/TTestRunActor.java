@@ -2,6 +2,7 @@ package akkaTestJS.actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import akkaTestJS.TAkkaTestJSApp;
 import akkaTestJS.packetJSON.TPacketTest;
 import akkaTestJS.testsJSON.TTest;
 
@@ -12,7 +13,7 @@ public class TTestRunActor extends AbstractActor {
 
     private static final String ENGINE_NAME = "nashorn";
     private static final String ERROR_RUNTIME = "RUNTIME ERROR";
-
+    private static final String PATH_TO_STORAGE_ACTOR = "/user/" + TAkkaTestJSApp.ROOT_ACTOR + "/" + TAkkaTestJSApp.ST
     public Receive createRecive() {
         return ReceiveBuilder.create()
                 .match(TPacketTest.class, val -> {
