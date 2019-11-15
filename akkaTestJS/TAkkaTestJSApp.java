@@ -18,5 +18,6 @@ public class TAkkaTestJSApp {
     public static void main(String[] args) throws Exception {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
         ActorRef rootActor = sys.actorOf(Props.create(TRootActor.class), ROOT_ACTOR);
+        
     }
 }
