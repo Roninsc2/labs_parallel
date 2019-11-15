@@ -31,7 +31,10 @@ public class TTestResult {
         result = res;
         expectedRes = exRes;
         params = p;
+    }
 
+    public void setPackageId(String id) {
+        packageId = id;
     }
 
 }
