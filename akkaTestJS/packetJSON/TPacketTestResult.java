@@ -11,6 +11,9 @@ public class TPacketTestResult {
     private TTestResult[] testResults;
 
     public TPacketTestResult() {
-        
+    }
+
+    public TPacketTestResult(String id, TTestResult[] results) {
+        packageId = id;
     }
 }
