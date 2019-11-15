@@ -70,7 +70,7 @@ public class TTestResult {
     }
 
     public String getExpectedRes() {
-        return expectedRes;
+        return expectedResult;
     }
 
     public boolean isSuccess() {
