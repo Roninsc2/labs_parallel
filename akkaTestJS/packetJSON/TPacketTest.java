@@ -36,4 +36,8 @@ public class TPacketTest {
     public TTest[] getTests() {
         return tests;
     }
+
+    public void setPackageId(String id) {
+        packageId = id;
+    }
 }
