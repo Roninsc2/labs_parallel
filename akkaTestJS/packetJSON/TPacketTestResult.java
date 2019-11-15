@@ -7,4 +7,5 @@ import akkaTestJS.testsJSON.TTestResult;
 public class TPacketTestResult {
 
     private String packageId;
+    private boolean isSuccess;
 }
