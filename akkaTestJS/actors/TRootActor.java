@@ -7,6 +7,7 @@ import akka.japi.pf.ReceiveBuilder;
 import akka.routing.RoundRobinPool;
 import akkaTestJS.TAkkaTestJSApp;
 import akkaTestJS.packetJSON.TPacketTest;
+import akkaTestJS.packetJSON.TResultPackageID;
 import akkaTestJS.testsJSON.TTest;
 
 public class TRootActor extends AbstractActor {
@@ -30,7 +31,11 @@ public class TRootActor extends AbstractActor {
                         ), self()
                         );
                     }
-                }).build();
+                })
+                .match(TResultPackageID.class, val -> {
+                    storageActor.tell(val, sender());
+                })
+                .build();
     }
 
 }
