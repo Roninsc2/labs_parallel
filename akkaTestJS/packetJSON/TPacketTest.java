@@ -40,4 +40,8 @@ public class TPacketTest {
     public void setPackageId(String id) {
         packageId = id;
     }
+
+    public void setJsScript(String script) {
+        jsScript = script;
+    }
 }
