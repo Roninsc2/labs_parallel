@@ -9,7 +9,6 @@ import akkaTestJS.packetJSON.TPacketTest;
 import akkaTestJS.packetJSON.TResultPackageID;
 
 import java.util.concurrent.Future;
-import java.util.regex.Pattern;
 
 public class THttpRouter extends AllDirectives {
     private static final String TEST_STARTED = "TEST STARTED";
