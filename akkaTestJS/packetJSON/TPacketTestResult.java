@@ -21,6 +21,7 @@ public class TPacketTestResult {
         for (TTestResult result : testResults) {
             if (!result.isSuccess()) {
                 isSuccess = false;
+                break;
             }
         }
     }
