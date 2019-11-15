@@ -18,5 +18,6 @@ public class TPacketTest {
         packageId = id;
         jsScript = script;
         functionName = fName;
+        tests = t;
     }
 }
