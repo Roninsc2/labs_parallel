@@ -14,7 +14,7 @@ public class TStorageActor extends AbstractActor {
 
     private Map<String, List<TTestResult>> storage = new HashMap<>();
 
-    public Receive createReceive()() {
+    public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TTestResult.class, val -> {
                     storage.computeIfAbsent(val.getPackageId(), k -> new ArrayList<>());
