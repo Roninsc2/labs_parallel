@@ -1,6 +1,8 @@
 package akkaTestJS;
 
+import akka.actor.ActorRef;
 import akka.http.javadsl.server.AllDirectives;
+import akka.http.javadsl.server.Route;
 
 public class THttpRouter extends AllDirectives {
     private static final String TEST_STARTED = "TEST STARTED";
@@ -10,5 +12,9 @@ public class THttpRouter extends AllDirectives {
     private static final int TIMEOUT = 5000;
 
     THttpRouter(){
+    }
+
+    Route createRoute(ActorRef rootActor) {
+        return route()
     }
 }
