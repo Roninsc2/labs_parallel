@@ -30,6 +30,7 @@ public class TTestResult {
         isSuccess = successFlag;
         result = res;
         expectedRes = exRes;
+        params = p;
 
     }
 
