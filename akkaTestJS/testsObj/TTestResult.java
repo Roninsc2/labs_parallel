@@ -23,7 +23,7 @@ public class TTestResult {
 
     public TTestResult(String id, String n, boolean isOk,
                        String res, String exRes,
-                       Object[] params)
+                       Object[] p)
     {
         packageId = id;
     }
