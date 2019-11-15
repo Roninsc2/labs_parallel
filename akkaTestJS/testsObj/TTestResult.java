@@ -69,4 +69,8 @@ public class TTestResult {
         return result;
     }
 
+    public String getExpectedRes() {
+        return expectedRes;
+    }
+
 }
