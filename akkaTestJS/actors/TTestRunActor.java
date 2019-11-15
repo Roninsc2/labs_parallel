@@ -33,6 +33,8 @@ public class TTestRunActor extends AbstractActor {
                         res = ERROR_RUNTIME;
                     }
 
+                    System.out.println(test.getName() + " ended");
+
                     getContext().actorSelection(PATH_TO_STORAGE_ACTOR)
                             .tell(new TTestResult(
                                     val.getPackageId(),
