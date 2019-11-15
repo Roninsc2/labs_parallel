@@ -23,7 +23,7 @@ public class TTestRunActor extends AbstractActor {
                     try {
 
                     } catch (Exception ex) {
-                        res =
+                        res = ERROR_RUNTIME;
                     }
                         }
 
