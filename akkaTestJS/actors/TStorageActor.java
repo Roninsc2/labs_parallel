@@ -6,7 +6,6 @@ import akkaTestJS.testsJSON.TTestResult;
 import akkaTestJS.packetJSON.TResultPackageID;
 import akkaTestJS.packetJSON.TPacketTestResult;
 
-
 import java.util.*;
 
 public class TStorageActor extends AbstractActor {
