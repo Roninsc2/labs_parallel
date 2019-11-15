@@ -45,5 +45,6 @@ public class TAkkaTestJSApp {
         System.out.println(START_MESSAGE);
         System.in.read();
         bind.thenCompose(ServerBinding::unbind).thenAccept(unbound -> sys.terminate());
+        
     }
 }
