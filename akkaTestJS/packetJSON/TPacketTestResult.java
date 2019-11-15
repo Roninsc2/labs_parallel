@@ -9,4 +9,8 @@ public class TPacketTestResult {
     private String packageId;
     private boolean isSuccess;
     private TTestResult[] testResults;
+
+    public TPacketTestResult() {
+        
+    }
 }
