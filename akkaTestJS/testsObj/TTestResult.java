@@ -12,5 +12,6 @@ public class TTestResult {
     @JsonIgnore
     private String packageId;
     @JsonProperty("success")
-    private boolean isSuccess
+    private boolean isSuccess;
+    private String result;
 }
