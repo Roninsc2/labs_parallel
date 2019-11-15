@@ -17,6 +17,7 @@ public class TTestRunActor extends AbstractActor {
                 .match(TPacketTest.class, val -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
                     TTest test = val.getTests()[0];
+                    String res;
                         }
 
                 )
