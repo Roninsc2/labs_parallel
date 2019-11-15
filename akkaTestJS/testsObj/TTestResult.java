@@ -25,6 +25,7 @@ public class TTestResult {
                        String res, String exRes,
                        Object[] params)
     {
+        packageId = id;
     }
 
 }
