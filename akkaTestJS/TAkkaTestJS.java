@@ -1,4 +1,4 @@
 package akkaTestJS;
 
-public class TAkkaTestJS {
+public class TAkkaTestJSApp {
 }
