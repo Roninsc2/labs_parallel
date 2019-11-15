@@ -3,8 +3,10 @@ package akkaTestJS.actors;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.japi.pf.ReceiveBuilder;
 import akka.routing.RoundRobinPool;
 import akkaTestJS.TAkkaTestJSApp;
+import akkaTestJS.packetJSON.TPacketTest;
 
 public class TRootActor extends AbstractActor {
 
@@ -16,7 +18,10 @@ public class TRootActor extends AbstractActor {
     );
 
     public Receive createReceive() {
+        return ReceiveBuilder.create()
+                .match(TPacketTest.class, val -> {
 
+                }).build();
     }
 
 }
