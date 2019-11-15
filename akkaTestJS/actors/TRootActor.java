@@ -1,4 +1,6 @@
 package akkaTestJS.actors;
 
-public class TRootActor {
+import akka.actor.AbstractActor;
+
+public class TRootActor extends AbstractActor {
 }
