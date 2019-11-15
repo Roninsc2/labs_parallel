@@ -13,4 +13,8 @@ public class TPacketTest {
 
     public TPacketTest() {
     }
+
+    public TPacketTest(String id, String script, String fName, TTest[] t) {
+
+    }
 }
