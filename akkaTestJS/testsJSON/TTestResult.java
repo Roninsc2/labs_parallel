@@ -69,7 +69,7 @@ public class TTestResult {
         return result;
     }
 
-    public String getExpectedRes() {
+    public String getExpectedResult() {
         return expectedResult;
     }
 
