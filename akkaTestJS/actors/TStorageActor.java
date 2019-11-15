@@ -13,7 +13,7 @@ public class TStorageActor extends AbstractActor {
     private static final String ERROR_404 = "ERROR 404 : RESULT NOT FOUND";
 
     private Map<String, List<TTestResult>> storage = new HashMap<>();
-    public Receive createRecive() {
+    public Receive createReceive()() {
         return ReceiveBuilder.create()
                 .match(TTestResult.class, val -> {
                     storage.computeIfAbsent(val.getPackageId(), k -> new ArrayList<>());
