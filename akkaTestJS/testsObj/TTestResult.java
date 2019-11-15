@@ -9,5 +9,5 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({"name", "success", "result", "expectedRes", "params"})
 public class TTestResult {
 
-    
+    @JsonIgnore
 }
