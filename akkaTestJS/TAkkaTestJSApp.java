@@ -37,8 +37,9 @@ public class TAkkaTestJSApp {
                 router.createRoute(rootActor).flow(sys, materializer);
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
-          routeFlow,
-          ConnectHttp.toHost(HOST, PORT);
+                routeFlow,
+                ConnectHttp.toHost(HOST, PORT),
+                materializer
         );
     }
 }
