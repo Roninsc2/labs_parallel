@@ -6,5 +6,5 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 public class TTest {
 
     private String name;
-    private String expected
+    private String 
 }
