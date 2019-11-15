@@ -73,4 +73,8 @@ public class TTestResult {
         return expectedRes;
     }
 
+    public boolean isSuccess() {
+        return isSuccess;
+    }
+
 }
