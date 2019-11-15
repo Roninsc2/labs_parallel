@@ -49,4 +49,8 @@ public class TTestResult {
         result = res;
     }
 
+    public void setExpectedRes(String exRes) {
+        expectedRes = exRes;
+    }
+
 }
