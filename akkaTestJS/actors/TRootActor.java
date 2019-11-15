@@ -30,6 +30,7 @@ public class TRootActor extends AbstractActor {
                                 new TTest[]{test}
                         ), self()
                         );
+                        System.out.println(test.getName() + " started");
                     }
                 })
                 .match(TResultPackageID.class, val -> {
