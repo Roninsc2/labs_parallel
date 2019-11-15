@@ -22,7 +22,13 @@ public class TRootActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(TPacketTest.class, val -> {
                     for (TTest test : val.getTests()) {
-                        test
+                        testRouter.tell(new TPacketTest(
+                                val.getPackageId(),
+                                val.getJsScript(),
+                                val.getFunctionName(),
+                                new TTest[]{test}
+                        ), self()
+                        );
                     }
                 }).build();
     }
