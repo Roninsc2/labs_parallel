@@ -3,7 +3,6 @@ package akkaTestJS;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
-import akka.http.javadsl.Http;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.*;
 import akkaTestJS.actors.TRootActor;
