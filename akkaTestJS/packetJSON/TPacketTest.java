@@ -7,6 +7,6 @@ import akkaTestJS.testsJSON.TTest;
 public class TPacketTest {
 
     private String packageId;
-    String jsScriot;
+    String jsScript;
     private String functionName;
 }
