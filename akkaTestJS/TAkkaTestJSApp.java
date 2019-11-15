@@ -5,7 +5,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.stream.ActorMaterializer;
-import akka.stream.javadsl.*;
+import akka.stream.javadsl.Flow;
 import akkaTestJS.actors.TRootActor;
 
 public class TAkkaTestJSApp {
