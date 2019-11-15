@@ -15,7 +15,7 @@ public class TTestResult {
     private boolean isSuccess;
     private String result;
     private String name;
-    private String expectedRes;
+    private String expectedResult;
     private Object[] params;
 
     public TTestResult() {
