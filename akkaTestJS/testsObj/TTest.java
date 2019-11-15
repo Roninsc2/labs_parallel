@@ -29,4 +29,8 @@ public class TTest {
     public void setParams(Object[] p) {
         params = p;
     }
+
+    public String getName() {
+        return name;
+    }
 }
