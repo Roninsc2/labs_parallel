@@ -28,6 +28,7 @@ public class TTestRunActor extends AbstractActor {
                         engine.eval(val.getJsScript());
                         Invocable invocable = (Invocable) engine;
                         Object[] params = test.getParams();
+                        res = invocable.invokeFunction(val.getFunctionName(), params).toString();
                     } catch (Exception ex) {
                         res = ERROR_RUNTIME;
                     }
