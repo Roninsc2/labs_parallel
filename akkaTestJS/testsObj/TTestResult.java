@@ -57,4 +57,8 @@ public class TTestResult {
         params = p;
     }
 
+    public String getPackageId() {
+        return packageId;
+    }
+
 }
