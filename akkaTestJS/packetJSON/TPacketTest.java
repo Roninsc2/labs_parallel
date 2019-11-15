@@ -48,4 +48,8 @@ public class TPacketTest {
     public void setFunctionName(String fName) {
         functionName = fName;
     }
+
+    public void setTests(TTest[] t) {
+        tests = t;
+    }
 }
