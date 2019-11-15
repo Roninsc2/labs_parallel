@@ -7,6 +7,7 @@ import akkaTestJS.packetJSON.TPacketTest;
 import akkaTestJS.testsJSON.TTest;
 import akkaTestJS.testsJSON.TTestResult;
 
+import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
@@ -25,6 +26,7 @@ public class TTestRunActor extends AbstractActor {
 
                     try {
                         engine.eval(val.getJsScript());
+                        Invocable invocable = (Invocable) engine;
                     } catch (Exception ex) {
                         res = ERROR_RUNTIME;
                     }
