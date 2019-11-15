@@ -37,7 +37,8 @@ public class TTestRunActor extends AbstractActor {
                                     res,
                                     test.getExpectedResult(),
                                     test.getParams()
-                            ), self());
+                            ), self()
+                            );
                         }
 
                 )
