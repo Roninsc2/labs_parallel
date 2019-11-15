@@ -17,5 +17,11 @@ public class TPacketTestResult {
         packageId = id;
         testResults = results;
         isSuccess = true;
+
+        for (TTestResult result : testResults) {
+            if (!result.isSuccess()) {
+                isSuccess = false;
+            }
+        }
     }
 }
