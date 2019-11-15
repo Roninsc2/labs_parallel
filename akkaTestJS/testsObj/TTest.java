@@ -13,6 +13,6 @@ public class TTest {
     }
 
     public TTest(String n, String exRes, Object[] p) {
-
+        name = n;
     }
 }
