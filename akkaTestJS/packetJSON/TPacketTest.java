@@ -44,4 +44,8 @@ public class TPacketTest {
     public void setJsScript(String script) {
         jsScript = script;
     }
+
+    public void setFunctionName(String fName) {
+        functionName = fName;
+    }
 }
