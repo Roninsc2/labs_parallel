@@ -37,4 +37,8 @@ public class TTestResult {
         packageId = id;
     }
 
+    public void setSuccess(boolean successFlag) {
+        isSuccess = successFlag;
+    }
+
 }
