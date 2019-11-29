@@ -24,13 +24,13 @@ public class TAkkaStreamsApp {
 
     public static void main(String[] args) throws Exception {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
-        
+
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
-        THttpRouter router = new THttpRouter();
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                router.createRoute(rootActor).flow(sys, materializer);
+        final TServer server = new TServer(sys);
+        final Flow<HttpRequest, HttpResponse, NotUsed> flow =
+                TServer.
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
                 routeFlow,
