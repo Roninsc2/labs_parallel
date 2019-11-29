@@ -5,10 +5,8 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.RoundRobinPool;
-import akkaTestJS.TAkkaTestJSApp;
-import akkaTestJS.packetJSON.TPacketTest;
-import akkaTestJS.packetJSON.TResultPackageID;
-import akkaTestJS.testsJSON.TTest;
+import akkaStreams.packet.TPongPkt;
+import akkaStreams.packet.TPingPktPkt;
 
 public class TCacheActor extends AbstractActor {
 
