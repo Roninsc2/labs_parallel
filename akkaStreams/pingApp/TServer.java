@@ -20,6 +20,7 @@ public class TServer {
 
     private static final String URL_NAME = "url";
     private static final String COUNT_NAME = "count";
+    private static final int PARALLELISM = 2;
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
     private ActorRef actor;
