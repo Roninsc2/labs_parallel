@@ -74,6 +74,6 @@ public class TServer {
                             .toCompletableFuture()
                             .thenApply(pong -> System.currentTimeMillis() - startTime)
                 })
-                .toMat(Sink.fold(0, Long::sum), Keep.right());
+                .toMat(Sink.fold(0L, Long::sum), Keep.right());
     }
 }
