@@ -19,7 +19,7 @@ public class TCacheActor extends AbstractActor {
                     sender().tell(new TPingPkt(val.getUrl(), res), self());
                 })
                 .match(TPongPkt.class, val -> {
-                    cache.put(val.getUrl(), val.get);
+                    cache.put(val.getUrl(), val.getAvrgPongTime());
                 })
                 .build();
     }
