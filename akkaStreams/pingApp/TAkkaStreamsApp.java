@@ -32,7 +32,7 @@ public class TAkkaStreamsApp {
         final Flow<HttpRequest, HttpResponse, NotUsed> flow = server.getFlow(materializer);
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
-                routeFlow,
+                flow,
                 ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
