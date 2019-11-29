@@ -5,6 +5,8 @@ import akka.japi.pf.ReceiveBuilder;
 import akkaStreams.packet.TPongPkt;
 import akkaStreams.packet.TPingPkt;
 
+import java.util.HashMap;
+
 public class TCacheActor extends AbstractActor {
 
     private Map<String, int> cache = new HashMap<>();
