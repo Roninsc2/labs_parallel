@@ -17,6 +17,7 @@ import akkaStreams.packet.TPingPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
+import java.util.Collections;
 import java.util.concurrent.CompletionStage;
 
 public class TServer {
@@ -52,6 +53,6 @@ public class TServer {
     }
 
     private CompletionStage<TPongPkt> pingExecute(TPongPkt pong, ActorMaterializer materializer) {
-        
+            return Source.from(Collections)
     }
 }
