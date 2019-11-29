@@ -35,7 +35,7 @@ public class TServer {
                     String url = requestQuery.getOrElse(URL_NAME, "");
                     int count = Integer.parseInt(requestQuery.getOrElse(COUNT_NAME, "-1"));
 
-                    return new TPongPkt();
+                    return new TPongPkt(url, count);
                 })
                 .mapAsync()
     }
