@@ -2,7 +2,7 @@ package akkaStreams.packet;
 
 public class TPongPkt {
     private String url;
-    private int avrgPongTime;
+    private Integer avrgPongTime;
 
     public TPongPkt(String u, int pongTime) {
         url = u;
