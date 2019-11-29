@@ -66,7 +66,13 @@ public class TServer {
         return Flow.<TPingPkt>create()
                 .mapConcat(ping -> Collections.nCopies(ping.getCount(), ping.getUrl()))
                 .mapAsync(PARALLELISM, url -> {
-                    long startTime = System.nanoTime();
+                    long startTime = System.currentTimeMillis();
+
+                    return client
+                            .prepareGet(url)
+                            .execute()
+                            .toCompletableFuture()
+                            .thenApply(pong -> System.currentTimeMillis() - startTime);
                 })
     }
 }
