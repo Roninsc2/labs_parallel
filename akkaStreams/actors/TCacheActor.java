@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class TCacheActor extends AbstractActor {
 
-    private Map<String, int> cache = new HashMap<>();
+    private Map<String, Integer> cache = new HashMap<>();
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
