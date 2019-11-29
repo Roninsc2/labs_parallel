@@ -16,10 +16,7 @@ import akkaTestJS.actors.TRootActor;
 import java.util.concurrent.CompletionStage;
 
 public class TAkkaStreamsApp {
-
-    public static final String ROOT_ACTOR = "rootActor";
-    public static final String STORAGE_ACTOR = "storageActor";
-
+    
     private static final String ACTOR_SYSTEM = "ping";
     private static final String HOST = "localhost";
     private static final int PORT = 8080;
