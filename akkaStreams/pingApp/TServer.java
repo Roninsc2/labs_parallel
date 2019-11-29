@@ -71,10 +71,10 @@ public class TServer {
             return Source.from(Collections.singletonList(ping))
                     .toMat(pingSink(), Keep.right())
                     .run(materializer)
-                    .thenApply((summaryTime) -> new TPongPkt(
+                    .thenApply(summaryTime -> new TPongPkt(
                             ping.getUrl(),
-                            summaryTime / ping.getCount()
-                    ));
+                            summaryTime / ping.getCount())
+                    );
     }
 
     private Sink<TPingPkt, CompletionStage<Long>> pingSink() {
