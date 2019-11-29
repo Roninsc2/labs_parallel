@@ -51,7 +51,10 @@ public class TServer {
                             return cachePongPkt.getAvrgPongTime() == -1
                                     ? pingExecute(ping, materializer)
                                     : CompletableFuture.completedFuture(cachePongPkt);
-                        })
+                        }))
+                .map(pong -> {
+                    actor.tell(pong, ActorRef.noSender());
+                })
     }
 
     private CompletionStage<TPongPkt> pingExecute(TPingPkt ping, ActorMaterializer materializer) {
