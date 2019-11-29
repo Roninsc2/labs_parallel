@@ -13,4 +13,8 @@ public class TPongPkt {
         return url;
     }
 
+    int getAvrgPongTime() {
+        return avrgPongTime;
+    }
+
 }
