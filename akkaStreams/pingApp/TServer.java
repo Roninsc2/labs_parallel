@@ -17,6 +17,7 @@ import akkaStreams.packet.TPingPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -44,7 +45,7 @@ public class TServer {
 
                     return new TPingPkt(url, count);
                 })
-                .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT)
+                .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, Duration.ofMillis(TIMEOUT))
                         .thenCompose(pong -> {
                             TPongPkt cachePongPkt = (TPongPkt)pong;
 
