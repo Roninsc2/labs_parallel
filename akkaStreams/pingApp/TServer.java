@@ -72,7 +72,8 @@ public class TServer {
                             .prepareGet(url)
                             .execute()
                             .toCompletableFuture()
-                            .thenApply(pong -> System.currentTimeMillis() - startTime);
+                            .thenApply(pong -> System.currentTimeMillis() - startTime)
                 })
+                .toMat(Sink.fold(0, Long::sum), Keep.right());
     }
 }
