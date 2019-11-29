@@ -6,5 +6,6 @@ public class TPingPkt {
 
     public TPingPkt(String u, int c) {
         url = u;
+        count = c;
     }
 }
