@@ -19,6 +19,7 @@ import org.asynchttpclient.Dsl;
 public class TServer {
 
     private static final String URL_NAME = "url";
+    private static final String COUNT_NAME = "count";
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
     private ActorRef actor;
@@ -32,6 +33,7 @@ public class TServer {
                 .map(val -> {
                     Query requestQuery = val.getUri().query();
                     String url = requestQuery.getOrElse(URL_NAME, "");
+                    int count = Integer.parseInt(requestQuery.getOrElse())
                 })
                 .mapAsync()
     }
