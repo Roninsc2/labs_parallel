@@ -18,6 +18,7 @@ import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
 import java.util.Collection;
+import java.util.concurrent.CompletableFuture;
 
 public class TServer {
 
