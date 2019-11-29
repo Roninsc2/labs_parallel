@@ -60,7 +60,7 @@ public class TServer {
                             .withStatus(StatusCode.OK)
                             .withEntity(
                                     HttpEntities.create(
-                                            val.getUrl() + " " val.get
+                                            val.getUrl() + " " val.getAvrgPongTime()
                                     )
                             );
                 });
