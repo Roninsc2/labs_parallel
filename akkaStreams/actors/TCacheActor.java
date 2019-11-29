@@ -19,8 +19,7 @@ public class TCacheActor extends AbstractActor {
                     sender().tell(new TPingPkt(val.getUrl(), res), self());
                 })
                 .match(TPongPkt.class, val -> {
-                    storageActor.tell(val, sender());
-                    System.out.println("Test results requested for id = " + val.getPackageId());
+                    cache.put(val.getUrl(), val.get);
                 })
                 .build();
     }
