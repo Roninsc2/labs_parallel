@@ -15,7 +15,7 @@ public class TCacheActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TPingPkt.class, val -> {
-                    Integer res = cache.getOrDefault(val.getUrl(), -1L);
+                    Integer res = cache.getOrDefault(val.getUrl(), -1);
                     sender().tell(new TPingPkt(val.getUrl(), res), self());
                 })
                 .match(TPongPkt.class, val -> {
