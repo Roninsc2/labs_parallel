@@ -6,6 +6,7 @@ public class TPongPkt {
 
     public TPongPkt(String u, int pongTime) {
         url = u;
+        avrgPongTime = pongTime;
     }
 
 }
