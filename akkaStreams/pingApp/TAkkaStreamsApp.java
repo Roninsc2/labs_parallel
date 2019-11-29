@@ -16,7 +16,7 @@ import akkaTestJS.actors.TRootActor;
 import java.util.concurrent.CompletionStage;
 
 public class TAkkaStreamsApp {
-    
+
     private static final String ACTOR_SYSTEM = "ping";
     private static final String HOST = "localhost";
     private static final int PORT = 8080;
@@ -24,8 +24,7 @@ public class TAkkaStreamsApp {
 
     public static void main(String[] args) throws Exception {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
-        ActorRef rootActor = sys.actorOf(Props.create(TRootActor.class), ROOT_ACTOR);
-
+        
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
         THttpRouter router = new THttpRouter();
