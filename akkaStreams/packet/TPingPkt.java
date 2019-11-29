@@ -4,7 +4,7 @@ public class TPingPkt {
     private String url;
     private Integer count;
 
-    public TPingPkt(String u, int c) {
+    public TPingPkt(String u, Integer c) {
         url = u;
         count = c;
     }
