@@ -8,7 +8,6 @@ import akka.http.javadsl.model.*;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import akka.pattern.Patterns;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Source;
 import akka.stream.javadsl.Sink;
