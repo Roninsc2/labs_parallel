@@ -4,7 +4,7 @@ public class TPongPkt {
     private String url;
     private Long avrgPongTime;
 
-    public TPongPkt(String u, Integer pongTime) {
+    public TPongPkt(String u, Long pongTime) {
         url = u;
         avrgPongTime = pongTime;
     }
