@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.model.*;
+import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Source;
@@ -25,7 +26,7 @@ public class TServer {
         actor = system.actorOf(Props.create(TCacheActor.class));
     }
 
-    FLow<HttpRequest, HttpResponse, NotUsed> getFlow() {
+    FLow<HttpRequest, HttpResponse, NotUsed> getFlow(ActorMaterializer materializer) {
         return Flow.of(HttpRequest.class)
                 .map(val -> {
                     Query requestQuery = val.getUri().query();
