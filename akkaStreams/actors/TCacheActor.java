@@ -1,7 +1,5 @@
 package akkaStreams.actors;
 
-package akkaTestJS.actors;
-
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
