@@ -63,6 +63,7 @@ public class TServer {
     }
 
     private Sink<TPingPkt, CompletionStage<Long>> pingSink() {
-        return Flow<>
+        return Flow.<TPingPkt>create()
+                .mapConcat(val -> Collections.nCopies(val.getCount(), val.getUrl()));
     }
 }
