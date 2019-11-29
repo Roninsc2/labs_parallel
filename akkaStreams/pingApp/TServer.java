@@ -47,7 +47,7 @@ public class TServer {
                 })
                 .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, Duration.ofMillis(TIMEOUT))
                         .thenCompose(pong -> {
-                            TPongPkt cachePongPkt = (TPongPkt)pong;
+                            TPongPkt cachePongPkt = pong;
 
                             return cachePongPkt.getAvrgPongTime() == -1
                                     ? pingExecute(ping, materializer)
