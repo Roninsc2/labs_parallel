@@ -17,6 +17,8 @@ import akkaStreams.packet.TPingPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
+import java.util.concurrent.CompletionStage;
+
 public class TServer {
 
     private static final String URL_NAME = "url";
@@ -44,6 +46,12 @@ public class TServer {
                         .thenCompose(val -> {
                             TPongPkt cachePongPkt = val;
 
+                            return cachePongPkt.getAvrgPongTime() == -1
+                                    ?
                         })
+    }
+
+    private CompletionStage<TPongPkt> pingExecute(TPongPkt pong, ActorMaterializer materializer) {
+        
     }
 }
