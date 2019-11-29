@@ -16,8 +16,6 @@ import akkaStreams.packet.TPingPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
-import javax.management.Query;
-
 public class TServer {
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
