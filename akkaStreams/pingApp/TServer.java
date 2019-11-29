@@ -31,7 +31,7 @@ public class TServer {
         return Flow.of(HttpRequest.class)
                 .map(val -> {
                     Query requestQuery = val.getUri().query();
-                    String url = requestQuery.getOrElse()
+                    String url = requestQuery.getOrElse(URL_NAME, "");
                 })
                 .mapAsync()
     }
