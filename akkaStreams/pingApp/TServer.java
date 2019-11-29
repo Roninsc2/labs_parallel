@@ -44,14 +44,14 @@ public class TServer {
 
                     return new TPingPkt(url, count);
                 })
-                .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT))
+                .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT)
                         .thenCompose(pong -> {
                             TPongPkt cachePongPkt = (TPongPkt)pong;
 
                             return cachePongPkt.getAvrgPongTime() == -1
                                     ? pingExecute(ping, materializer)
                                     : CompletableFuture.completedFuture(cachePongPkt);
-                        }))
+                        })
                 .map(val -> {
                     actor.tell(val, ActorRef.noSender());
 
