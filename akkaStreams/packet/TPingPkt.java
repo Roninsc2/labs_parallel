@@ -2,9 +2,9 @@ package akkaStreams.packet;
 
 public class TPingPkt {
     private String url;
-    private Integer count;
+    private int count;
 
-    public TPingPkt(String u, Integer c) {
+    public TPingPkt(String u, int c) {
         url = u;
         count = c;
     }
@@ -13,7 +13,7 @@ public class TPingPkt {
         return url;
     }
 
-    public Integer getCount() {
+    public int getCount() {
         return count;
     }
 }
