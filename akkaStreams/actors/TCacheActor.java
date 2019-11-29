@@ -1,8 +1,6 @@
 package akkaStreams.actors;
 
 import akka.actor.AbstractActor;
-import akka.actor.ActorRef;
-import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akkaStreams.packet.TPongPkt;
 import akkaStreams.packet.TPingPkt;
