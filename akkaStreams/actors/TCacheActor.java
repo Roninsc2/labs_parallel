@@ -6,7 +6,7 @@ import akkaStreams.packet.TPongPkt;
 import akkaStreams.packet.TPingPkt;
 
 import java.util.HashMap;
-import java.util.HashMap;
+import java.util.Map;
 
 public class TCacheActor extends AbstractActor {
 
