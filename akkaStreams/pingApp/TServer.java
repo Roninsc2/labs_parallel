@@ -58,7 +58,7 @@ public class TServer {
 
                     return HttpResponse
                             .create()
-                            .withStatus(StatusCode.OK)
+                            .withStatus(StatusCodes.OK)
                             .withEntity(
                                     HttpEntities.create(
                                             val.getUrl() + " " + val.getAvrgPongTime()
