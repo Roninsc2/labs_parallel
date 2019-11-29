@@ -53,7 +53,7 @@ public class TServer {
                                     ? pingExecute(ping, materializer)
                                     : CompletableFuture.completedFuture(cachePongPkt);
                         }))
-                .map(val -> {
+                .map(pongPkt -> {
                     actor.tell(val, ActorRef.noSender());
 
                     return HttpResponse
