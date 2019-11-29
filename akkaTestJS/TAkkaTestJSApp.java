@@ -17,6 +17,9 @@ import java.util.concurrent.CompletionStage;
 
 public class TAkkaTestJSApp {
 
+    public static final String ROOT_ACTOR = "rootActor";
+    public static final String STORAGE_ACTOR = "storageActor";
+
     private static final String ACTOR_SYSTEM = "test-js";
     private static final String HOST = "localhost";
     private static final int PORT = 8080;
@@ -24,7 +27,7 @@ public class TAkkaTestJSApp {
 
     public static void main(String[] args) throws Exception {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
-        ActorRef rootActor = sys.actorOf(Props.create(TRootActor.class));
+        ActorRef rootActor = sys.actorOf(Props.create(TRootActor.class), ROOT_ACTOR);
 
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
