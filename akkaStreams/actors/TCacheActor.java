@@ -7,12 +7,7 @@ import akkaStreams.packet.TPingPkt;
 
 public class TCacheActor extends AbstractActor {
 
-    private static final int INITIAL_POOL_SIZE = 3;
-
-    private ActorRef storageActor = getContext().actorOf(Props.create(TStorageActor.class), TAkkaTestJSApp.STORAGE_ACTOR);
-    private ActorRef testRouter = getContext().actorOf(
-            new RoundRobinPool(INITIAL_POOL_SIZE).props(Props.create(TTestRunActor.class))
-    );
+    private Map<String, int> cache = new HashMap<>();
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
