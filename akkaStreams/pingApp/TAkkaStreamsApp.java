@@ -11,33 +11,11 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import akkaTestJS.THttpRouter;
 import akkaTestJS.actors.TRootActor;
 
 import java.util.concurrent.CompletionStage;
 
 public class TAkkaStreamsApp {
-
-}
-
-package akkaTestJS;
-
-        import akka.NotUsed;
-        import akka.actor.ActorRef;
-        import akka.actor.ActorSystem;
-        import akka.actor.Props;
-        import akka.http.javadsl.ConnectHttp;
-        import akka.http.javadsl.Http;
-        import akka.http.javadsl.ServerBinding;
-        import akka.http.javadsl.model.HttpRequest;
-        import akka.http.javadsl.model.HttpResponse;
-        import akka.stream.ActorMaterializer;
-        import akka.stream.javadsl.Flow;
-        import akkaTestJS.actors.TRootActor;
-
-        import java.util.concurrent.CompletionStage;
-
-public class TAkkaTestJSApp {
 
     public static final String ROOT_ACTOR = "rootActor";
     public static final String STORAGE_ACTOR = "storageActor";
