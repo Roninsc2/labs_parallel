@@ -18,6 +18,7 @@ import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
 import java.util.Collections;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 public class TServer {
@@ -44,11 +45,12 @@ public class TServer {
                     return new TPingPkt(url, count);
                 })
                 .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT)
-                        .thenCompose(val -> {
-                            TPongPkt cachePongPkt = val;
+                        .thenCompose(pong -> {
+                            TPongPkt cachePongPkt = pong;
 
                             return cachePongPkt.getAvrgPongTime() == -1
-                                    ?
+                                    ? pingExecute(ping, materializer)
+                                    : CompletableFuture.completedFuture(cachePongPkt);
                         })
     }
 
