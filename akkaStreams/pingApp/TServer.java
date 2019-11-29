@@ -4,7 +4,7 @@ import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
-import akka.http.scaladsl.model.HttpResponse;
+import akka.http.javadsl.model.*
 import akka.stream.javadsl.Flow;
 import akkaStreams.actors.TCacheActor;
 import org.apache.http.HttpRequest;
