@@ -53,15 +53,15 @@ public class TServer {
                                     ? pingExecute(ping, materializer)
                                     : CompletableFuture.completedFuture(cachePongPkt);
                         }))
-                .map(pongPkt -> {
-                    actor.tell(val, ActorRef.noSender());
+                .map(pong -> {
+                    actor.tell(pong , ActorRef.noSender());
 
                     return HttpResponse
                             .create()
                             .withStatus(StatusCodes.OK)
                             .withEntity(
                                     HttpEntities.create(
-                                            val.getUrl() + " " + val.getAvrgPongTime()
+                                            pong.getUrl() + " " + pong.getAvrgPongTime()
                                     )
                             );
                 });
