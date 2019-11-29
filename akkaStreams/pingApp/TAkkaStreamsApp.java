@@ -30,7 +30,7 @@ public class TAkkaStreamsApp {
 
         final TServer server = new TServer(sys);
         final Flow<HttpRequest, HttpResponse, NotUsed> flow =
-                TServer.
+                server.getFlow(materializer);
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
                 routeFlow,
