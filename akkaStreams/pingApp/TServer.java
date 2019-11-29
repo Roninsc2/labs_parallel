@@ -46,15 +46,24 @@ public class TServer {
                 })
                 .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT)
                         .thenCompose(pong -> {
-                            TPongPkt cachePongPkt = pong;
+                            TPongPkt cachePongPkt = (TPongPkt)pong;
 
                             return cachePongPkt.getAvrgPongTime() == -1
                                     ? pingExecute(ping, materializer)
                                     : CompletableFuture.completedFuture(cachePongPkt);
                         }))
-                .map(pong -> {
-                    actor.tell(pong, ActorRef.noSender());
-                })
+                .map(val -> {
+                    actor.tell(val, ActorRef.noSender());
+
+                    return HttpResponse
+                            .create()
+                            .withStatus(StatusCode.OK)
+                            .withEntity(
+                                    HttpEntities.create(
+                                            val.
+                                    )
+                            )
+                });
     }
 
     private CompletionStage<TPongPkt> pingExecute(TPingPkt ping, ActorMaterializer materializer) {
