@@ -30,7 +30,7 @@ public class TServer {
     private static final String COUNT_NAME = "count";
     private static final int PARALLELISM = 2;
     private static final long TIMEOUT = 3000;
-    private static final Logger logger = LoggerFactory.getLogger(TAkkaStreamsApp.class);
+    private static final Logger logger = LoggerFactory.getLogger(TServer.class);
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
     private ActorRef actor;
