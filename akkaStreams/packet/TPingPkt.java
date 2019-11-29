@@ -13,7 +13,7 @@ public class TPingPkt {
         return url;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 }
