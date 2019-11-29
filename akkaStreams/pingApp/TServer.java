@@ -52,7 +52,7 @@ public class TServer {
                             return cachePongPkt.getAvrgPongTime() == -1
                                     ? pingExecute(ping, materializer)
                                     : CompletableFuture.completedFuture(cachePongPkt);
-                        })
+                        }))
                 .map(val -> {
                     actor.tell(val, ActorRef.noSender());
 
@@ -61,7 +61,7 @@ public class TServer {
                             .withStatus(StatusCode.OK)
                             .withEntity(
                                     HttpEntities.create(
-                                            val.getUrl() + " " val.getAvrgPongTime()
+                                            val.getUrl() + " " + val.getAvrgPongTime()
                                     )
                             );
                 });
