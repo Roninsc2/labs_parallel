@@ -9,4 +9,8 @@ public class TPongPkt {
         avrgPongTime = pongTime;
     }
 
+    String getUrl() {
+        return url;
+    }
+
 }
