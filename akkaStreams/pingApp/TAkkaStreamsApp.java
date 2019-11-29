@@ -29,8 +29,7 @@ public class TAkkaStreamsApp {
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
 
         final TServer server = new TServer(sys);
-        final Flow<HttpRequest, HttpResponse, NotUsed> flow =
-                server.getFlow(materializer);
+        final Flow<HttpRequest, HttpResponse, NotUsed> flow = server.getFlow(materializer);
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
                 routeFlow,
