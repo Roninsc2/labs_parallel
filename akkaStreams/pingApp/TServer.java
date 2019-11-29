@@ -60,9 +60,9 @@ public class TServer {
                             .withStatus(StatusCode.OK)
                             .withEntity(
                                     HttpEntities.create(
-                                            val.
+                                            val.getUrl() + " " val.get
                                     )
-                            )
+                            );
                 });
     }
 
