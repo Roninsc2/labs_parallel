@@ -10,6 +10,9 @@ import akkaStreams.actors.TCacheActor;
 import org.apache.http.HttpRequest;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
+
+import javax.management.Query;
+
 public class TServer {
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
@@ -20,9 +23,10 @@ public class TServer {
     }
 
     FLow<HttpRequest, HttpResponse, NotUsed> getFlow() {
-        return Flow.of(HttpRequest.class).map(val ->
-
-        )
-        .mapAsync()
+        return Flow.of(HttpRequest.class)
+                .map(val -> {
+                    Query requestQuery
+                })
+                .mapAsync()
     }
 }
