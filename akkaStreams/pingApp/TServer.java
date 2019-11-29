@@ -40,6 +40,9 @@ public class TServer {
 
                     return new TPongPkt(url, count);
                 })
-                .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT));
+                .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT)
+                        .thenCompose(val -> {
+                            TPongPkt cachePongPkt = val;
+                        })
     }
 }
