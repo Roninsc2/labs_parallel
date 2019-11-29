@@ -33,7 +33,7 @@ public class TServer {
                 .map(val -> {
                     Query requestQuery = val.getUri().query();
                     String url = requestQuery.getOrElse(URL_NAME, "");
-                    int count = Integer.parseInt(requestQuery.getOrElse())
+                    int count = Integer.parseInt(requestQuery.getOrElse(COUNT_NAME, "-1"));
                 })
                 .mapAsync()
     }
