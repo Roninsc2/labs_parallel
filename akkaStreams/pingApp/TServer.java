@@ -18,6 +18,8 @@ import org.asynchttpclient.Dsl;
 
 public class TServer {
 
+    private static final String URL_PARAM_NAME = "url";
+
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
     private ActorRef actor;
 
@@ -29,6 +31,7 @@ public class TServer {
         return Flow.of(HttpRequest.class)
                 .map(val -> {
                     Query requestQuery = val.getUri().query();
+                    String url = requestQuery.getOrElse()
                 })
                 .mapAsync()
     }
