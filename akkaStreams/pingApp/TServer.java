@@ -25,7 +25,7 @@ public class TServer {
     FLow<HttpRequest, HttpResponse, NotUsed> getFlow() {
         return Flow.of(HttpRequest.class)
                 .map(val -> {
-                    Query requestQuery
+                    Query requestQuery = val.getUri().query();
                 })
                 .mapAsync()
     }
