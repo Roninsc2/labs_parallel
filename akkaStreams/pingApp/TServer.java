@@ -65,6 +65,8 @@ public class TServer {
     private Sink<TPingPkt, CompletionStage<Long>> pingSink() {
         return Flow.<TPingPkt>create()
                 .mapConcat(ping -> Collections.nCopies(ping.getCount(), ping.getUrl()))
-                .mapAsync(PARALLELISM, url)
+                .mapAsync(PARALLELISM, url -> {
+                    long startTime = System.nanoTime();
+                })
     }
 }
