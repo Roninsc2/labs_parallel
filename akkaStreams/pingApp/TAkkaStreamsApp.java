@@ -10,6 +10,7 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 public class TAkkaStreamsApp {
@@ -19,7 +20,7 @@ public class TAkkaStreamsApp {
     private static final int PORT = 8080;
     private static final String START_MESSAGE = "Server started, http://" + HOST + ":" + PORT + "/\n";
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
 
         final Http http = Http.get(sys);
