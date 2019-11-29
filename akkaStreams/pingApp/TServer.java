@@ -16,6 +16,8 @@ import akkaStreams.packet.TPongPkt;
 import akkaStreams.packet.TPingPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -31,6 +33,7 @@ public class TServer {
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
     private ActorRef actor;
+    private static final Logger logger = LoggerFactory.getLogger(AkkaStream.class);
 
     TServer(ActorSystem system) {
         actor = system.actorOf(Props.create(TCacheActor.class));
