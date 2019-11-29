@@ -34,6 +34,8 @@ public class TServer {
                     Query requestQuery = val.getUri().query();
                     String url = requestQuery.getOrElse(URL_NAME, "");
                     int count = Integer.parseInt(requestQuery.getOrElse(COUNT_NAME, "-1"));
+
+                    return new TPongPkt();
                 })
                 .mapAsync()
     }
