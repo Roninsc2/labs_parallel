@@ -9,11 +9,11 @@ public class TPongPkt {
         avrgPongTime = pongTime;
     }
 
-    String getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    int getAvrgPongTime() {
+    public int getAvrgPongTime() {
         return avrgPongTime;
     }
 
