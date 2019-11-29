@@ -6,7 +6,7 @@ import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.RoundRobinPool;
 import akkaStreams.packet.TPongPkt;
-import akkaStreams.packet.TPingPktPkt;
+import akkaStreams.packet.TPingPkt;
 
 public class TCacheActor extends AbstractActor {
 
