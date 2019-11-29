@@ -34,7 +34,7 @@ public class TServer {
         actor = system.actorOf(Props.create(TCacheActor.class));
     }
 
-    FLow<HttpRequest, HttpResponse, NotUsed> getFlow(ActorMaterializer materializer) {
+    Flow<HttpRequest, HttpResponse, NotUsed> getFlow(ActorMaterializer materializer) {
         return Flow.of(HttpRequest.class)
                 .map(val -> {
                     Query requestQuery = val.getUri().query();
@@ -63,6 +63,6 @@ public class TServer {
     }
 
     private Sink<TPingPkt, CompletionStage<Long>> pingSink() {
-
+        return Flow<>
     }
 }
