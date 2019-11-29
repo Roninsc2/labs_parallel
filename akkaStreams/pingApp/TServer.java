@@ -52,7 +52,17 @@ public class TServer {
                         })
     }
 
-    private CompletionStage<TPongPkt> pingExecute(TPongPkt pong, ActorMaterializer materializer) {
-            return Source.from(Collections)
+    private CompletionStage<TPongPkt> pingExecute(TPingPkt ping, ActorMaterializer materializer) {
+            return Source.from(Collections.singletonList(ping))
+                    .toMat(pingSink(), Keep.right())
+                    .run(materializer)
+                    .thenApply((summaryTime) -> new TPongPkt(
+                            ping.getUrl(),
+                            summaryTime / ping.getCount()
+                    ));
+    }
+
+    private Sink<TPingPkt, CompletionStage<Long>> pingSink() {
+
     }
 }
