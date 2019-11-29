@@ -17,10 +17,6 @@ import akkaStreams.packet.TPingPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
-import java.util.Collection;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
-
 public class TServer {
 
     private static final String URL_NAME = "url";
