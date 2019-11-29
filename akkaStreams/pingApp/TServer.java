@@ -1,5 +1,4 @@
 package akkaStreams.pingApp;
 
-public class TAkkaStreamsApp {
-
+public class TServer {
 }
