@@ -41,7 +41,7 @@ public class TServer {
                     String url = requestQuery.getOrElse(URL_NAME, "");
                     int count = Integer.parseInt(requestQuery.getOrElse(COUNT_NAME, "-1"));
 
-                    return new TPongPkt(url, count);
+                    return new TPingPkt(url, count);
                 })
                 .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT)
                         .thenCompose(val -> {
