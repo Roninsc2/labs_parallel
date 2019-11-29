@@ -12,7 +12,7 @@ import akkaTestJS.packetJSON.TPacketTest;
 import akkaTestJS.packetJSON.TResultPackageID;
 import akkaTestJS.testsJSON.TTest;
 
-public class TRootActor extends AbstractActor {
+public class TCacheActor extends AbstractActor {
 
     private static final int INITIAL_POOL_SIZE = 3;
 
