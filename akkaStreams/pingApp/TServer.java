@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.model.*;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
@@ -38,6 +39,6 @@ public class TServer {
 
                     return new TPongPkt(url, count);
                 })
-                .mapAsync()
+                .mapAsync(PARALLELISM, ping -> Patterns.ask(actor, ping, TIMEOUT));
     }
 }
