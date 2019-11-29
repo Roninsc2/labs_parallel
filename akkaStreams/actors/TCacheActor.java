@@ -13,7 +13,7 @@ public class TCacheActor extends AbstractActor {
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TPacketTest.class, val -> {
+                .match(TPingPkt.class, val -> {
                     for (TTest test : val.getTests()) {
                         testRouter.tell(new TPacketTest(
                                         val.getPackageId(),
