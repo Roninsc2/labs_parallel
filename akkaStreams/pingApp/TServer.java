@@ -37,7 +37,8 @@ public class TServer {
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> getFlow(ActorMaterializer materializer) {
-        return Flow.of(HttpRequest.class)
+        return Flow
+                .of(HttpRequest.class)
                 .map(val -> {
                     Query requestQuery = val.getUri().query();
                     String url = requestQuery.getOrElse(URL_NAME, "");
@@ -51,7 +52,7 @@ public class TServer {
 
                             return cachePongPkt.getAvrgPongTime() == -1
                                     ? pingExecute(ping, materializer)
-                                    : CompletableFuture.completedFuture(cachePongPkt);
+                                    : CompletableFuture.completedFuture(cachePingPkt);
                         }))
                 .map(pong -> {
                     actor.tell(pong , ActorRef.noSender());
