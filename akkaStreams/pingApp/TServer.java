@@ -12,6 +12,6 @@ public class TServer {
     private ActorRef actor;
 
     TServer(ActorSystem system) {
-        actor = system.actorOf(Props.create(TCacheActor.class))
+        actor = system.actorOf(Props.create(TCacheActor.class));
     }
 }
