@@ -29,9 +29,6 @@ public class TServer {
     private static final int PARALLELISM = 2;
     private static final long TIMEOUT = 3000;
 
-
-    
-
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
     private ActorRef actor;
 
