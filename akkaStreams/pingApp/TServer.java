@@ -16,8 +16,6 @@ import akkaStreams.packet.TPongPkt;
 import akkaStreams.packet.TPingPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -30,7 +28,9 @@ public class TServer {
     private static final String COUNT_NAME = "count";
     private static final int PARALLELISM = 2;
     private static final long TIMEOUT = 3000;
-    private static final Logger logger = LoggerFactory.getLogger(TServer.class);
+
+
+    
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
     private ActorRef actor;
