@@ -2,11 +2,16 @@ package akkaZookeeper;
 
 import akka.actor.ActorRef;
 import org.apache.zookeeper.*;
-import akkaZookeeper.packet.TServerListPkt;
 
-public class TZookeeper {
-    private static final String ZK_HOST_PORT;
+import java.io.IOException;
+
+public class TServiceZK {
+    private static final String ZK_HOST_PORT = "127.0.0.1:2181";
 
     private  ZooKeeper zk;
     private ActorRef actor;
+
+    public TServiceZK(ActorRef actor) throws IOException {
+        zk = new ZooKeeper()
+    }
 }
