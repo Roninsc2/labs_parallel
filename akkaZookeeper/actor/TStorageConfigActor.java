@@ -13,7 +13,7 @@ public class TStorageConfigActor extends AbstractActor {
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TPingPkt.class, val -> {
+                .match(TServerListPkt.class, val -> {
                     Long res = cache.getOrDefault(val.getUrl(), -1L);
                     sender().tell(new TPongPkt(val.getUrl(), res), self());
                 })
