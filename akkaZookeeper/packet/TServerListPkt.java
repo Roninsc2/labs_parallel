@@ -6,4 +6,8 @@ public class TServerListPkt {
     public TServerListPkt(String[] serverList) {
         this.serverList = serverList;
     }
+
+    public String[] getServerList() {
+        return serverList;
+    }
 }
