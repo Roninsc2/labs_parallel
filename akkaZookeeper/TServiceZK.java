@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TServiceZK {
@@ -28,6 +29,8 @@ public class TServiceZK {
                     watchServers();
                 }
             });
+
+            List<String> servers = new ArrayList<>();
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
         }
