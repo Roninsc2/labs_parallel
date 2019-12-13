@@ -19,4 +19,12 @@ public class TServiceZK {
         this.actor = actor;
         //to do
     }
+
+    private void watchServers() {
+        List<String> = serverNodes = zk.getChildren(ROOT_PATH, event -> {
+            if (event.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+                watchServers();
+            }
+        });
+    }
 }
