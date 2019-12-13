@@ -6,4 +6,6 @@ import akkaZookeeper.packet.TServerListPkt;
 
 public class TZookeeper {
     private static final String ZK_HOST_PORT;
+
+    private  ZooKeeper zk;
 }
