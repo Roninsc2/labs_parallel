@@ -15,6 +15,6 @@ public class TServiceZK {
     private ActorRef actor;
 
     public TServiceZK(ActorRef actor) throws IOException {
-        zk = new ZooKeeper()
+        zk = new ZooKeeper(ZK_HOST_PORT, TIMEOUT, null);
     }
 }
