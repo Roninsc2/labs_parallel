@@ -23,6 +23,6 @@ public class TStorageConfigActor extends AbstractActor {
     }
 
     private String getServer() {
-        String url = serverList[new Random().nextInt(serverList.length)];
+        return serverList[new Random().nextInt(serverList.length)];
     }
 }
