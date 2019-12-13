@@ -4,6 +4,7 @@ import akka.actor.ActorRef;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
+import java.util.List;
 
 public class TServiceZK {
     private static final String ZK_HOST_PORT = "127.0.0.1:2181";
@@ -20,7 +21,7 @@ public class TServiceZK {
         //to do
     }
 
-    private void watchServers() {
+    private void watchServers() throws InterruptedException {
         List<String> = serverNodes = zk.getChildren(ROOT_PATH, event -> {
             if (event.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
                 watchServers();
