@@ -31,6 +31,10 @@ public class TServiceZK {
             });
 
             List<String> servers = new ArrayList<>();
+
+            for (String nodeName : serverNodes) {
+                
+            }
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
         }
