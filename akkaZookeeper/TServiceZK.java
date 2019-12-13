@@ -28,7 +28,7 @@ public class TServiceZK {
                     watchServers();
                 }
             });
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
         }
     }
