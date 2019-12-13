@@ -14,7 +14,7 @@ public class TStorageConfigActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TServerListPkt.class, val -> {
-                    
+                    this.serverList = val.getServerList();
                 })
                 .match(TPongPkt.class, val -> {
                     cache.put(val.getUrl(), val.getAvrgPongTime());
