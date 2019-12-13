@@ -28,6 +28,8 @@ public class TServiceZK {
                     watchServers();
                 }
             });
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
