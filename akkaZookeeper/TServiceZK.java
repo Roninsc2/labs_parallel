@@ -21,7 +21,7 @@ public class TServiceZK {
         //to do
     }
 
-    private void watchServers() throws  InterruptedException, KeeperException {
+    private void watchServers() {
         try {
             List<String> serverNodes = zk.getChildren(ROOT_PATH, event -> {
                 if (event.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
