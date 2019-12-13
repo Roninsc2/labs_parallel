@@ -2,6 +2,7 @@ package akkaZookeeper.actor;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import akkaZookeeper.packet.TServerListPkt;
 
 import java.util.Random;
 
