@@ -9,8 +9,6 @@ import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
 import akka.pattern.Patterns;
 import akkaZookeeper.packet.TServerPkt;
-import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.Dsl;
 
 import java.time.Duration;
 import java.util.Collections;
