@@ -1,6 +1,7 @@
 package akkaZookeeper;
 import akka.NotUsed;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -8,6 +9,7 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akkaZookeeper.actor.TStorageConfigActor;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -21,11 +23,11 @@ public class TAnonymizationApp {
 
     public static void main(String[] args) throws IOException {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
-
+        ActorRef = sys.actorOf(Props.create(TStorageConfigActor.class));
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
 
-        final TServer server = new TServer(sys);
+        final TServer server = new TServer(http, PORT, );
         final Flow<HttpRequest, HttpResponse, NotUsed> flow = server.getFlow(materializer);
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
