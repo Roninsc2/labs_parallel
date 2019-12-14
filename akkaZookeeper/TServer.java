@@ -19,7 +19,6 @@ public class TServer extends AllDirectives {
 
     private static final String URL_NAME = "url";
     private static final String COUNT_NAME = "count";
-    private static final int PARALLELISM = 2;
     private static final long TIMEOUT = 3000;
 
     private AsyncHttpClient client =  Dsl.asyncHttpClient();
