@@ -8,11 +8,14 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akka.japi.Pair;
 import akka.pattern.Patterns;
+import akkaZookeeper.packet.TServerListPkt;
 import akkaZookeeper.packet.TServerPkt;
 import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.concurrent.CompletionStage;
@@ -54,5 +57,16 @@ public class TServer extends AllDirectives {
     }
 
     private CompletionStage<HttpResponse> redirect(String url, int c) {
+        return Patterns.ask(actor, new TServerPkt(), TIMEOUT)
+                .thenCompose(serverUrl -> fetch(createRedirectUr))
+    }
+
+    private String createRedirectUrl(String serverUrl, String queryUrl, int count) {
+        return Uri.create(serverUrl)
+                .query(Query.create(
+                        Pair.create(URL_NAME, queryUrl),
+                        Pair.create(COUNT_NAME, Integer.toString(count - 1))
+                ))
+                .toString();
     }
 }
