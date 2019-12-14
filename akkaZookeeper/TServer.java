@@ -38,7 +38,7 @@ public class TServer extends AllDirectives {
         return get(() ->
             parameter(URL_NAME, url ->
                     parameter(COUNT_NAME, count -> {
-                            int count = Integer.parseInt(count);
+                            int c = Integer.parseInt(count);
                         }
                     )
             )
