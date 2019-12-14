@@ -42,7 +42,7 @@ public class TServer extends AllDirectives {
 
                             return Integer.parseInt(count) == 0 ?
                                 completeWithFuture(fetch(url)) :
-                                completeWithFuture(fetch(url, count))
+                                completeWithFuture(redirect(url, count));
                         }
                     )
             )
