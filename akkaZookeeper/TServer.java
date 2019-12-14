@@ -23,8 +23,9 @@ public class TServer extends AllDirectives {
     private Http http;
     private ActorRef actor;
 
-    TServer(final Http, int port, ActorRef actor) {
+    TServer(final Http http, int port, ActorRef actor) {
         this.actor = actor;
+
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> getFlow(ActorMaterializer materializer) {
