@@ -29,7 +29,7 @@ public class TAnonymizationApp {
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
 
-        final TServer server = new TServer(http, PORT, actor);
+        final TServer server = new TServer(http, port, actor);
         final Flow<HttpRequest, HttpResponse, NotUsed> flow =
                 server.createRoute().flow(sys, materializer);
 
