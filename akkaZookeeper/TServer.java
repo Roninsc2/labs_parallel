@@ -39,6 +39,10 @@ public class TServer extends AllDirectives {
             parameter(URL_NAME, url ->
                     parameter(COUNT_NAME, count -> {
                             int c = Integer.parseInt(count);
+
+                            return Integer.parseInt(count) == 0 ?
+                                completeWithFuture(fetch(url)) :
+                                completeWithFuture(fetch(url, count))
                         }
                     )
             )
