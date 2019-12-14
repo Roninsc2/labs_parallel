@@ -1,4 +1,6 @@
 package akkaZookeeper;
 
-public class TServer {
+import akka.http.javadsl.server.AllDirectives;
+
+public class TServer extends AllDirectives {
 }
