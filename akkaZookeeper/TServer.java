@@ -21,7 +21,7 @@ public class TServer extends AllDirectives {
     private static final String COUNT_NAME = "count";
     private static final long TIMEOUT = 3000;
 
-    private AsyncHttpClient client =  Dsl.asyncHttpClient();
+    private Http http;
     private ActorRef actor;
 
     TServer(ActorSystem system) {
