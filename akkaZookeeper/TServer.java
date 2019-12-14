@@ -58,7 +58,7 @@ public class TServer extends AllDirectives {
 
     private CompletionStage<HttpResponse> redirect(String url, int c) {
         return Patterns.ask(actor, new TServerPkt(), TIMEOUT)
-                .thenCompose(serverUrl -> fetch(createRedirectUrl(serverUrl, url, c)));
+                .thenCompose(serverUrl -> fetch(createRedirectUrl((String) serverUrl, url, c)));
     }
 
     private String createRedirectUrl(String serverUrl, String queryUrl, int count) {
