@@ -34,6 +34,7 @@ public class TServiceZK {
 
             for (String nodeName : serverNodes) {
                 byte[] serveUrl = zk.getData(ROOT_PATH + "/" + nodeName, null, null);
+                servers.add(new String(serveUrl));
             }
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
