@@ -28,7 +28,7 @@ public class TAnonymizationApp {
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
 
-        final TServer server = new TServer(http, PORT, );
+        final TServer server = new TServer(http, PORT, actor);
         final Flow<HttpRequest, HttpResponse, NotUsed> flow = server.getFlow(materializer);
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
