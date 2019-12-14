@@ -28,7 +28,7 @@ public class TServer extends AllDirectives {
         this.actor = actor;
         this.http = http;
         TServiceZK serviceZK = new TServiceZK(actor);
-        serviceZK.createServer();
+        serviceZK.createServer(SERVER_URL + port);
 
     }
 
