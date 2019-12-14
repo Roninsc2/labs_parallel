@@ -10,7 +10,6 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.japi.Pair;
 import akka.pattern.Patterns;
-import akkaZookeeper.packet.TServerListPkt;
 import akkaZookeeper.packet.TServerPkt;
 import org.apache.zookeeper.KeeperException;
 
