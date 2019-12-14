@@ -11,6 +11,7 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akkaZookeeper.actor.TStorageConfigActor;
+import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -22,7 +23,7 @@ public class TAnonymizationApp {
     private static final int PORT = 8080;
     private static final String START_MESSAGE = "Server started, http://" + HOST + ":" + PORT + "/\n";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
         ActorRef actor = sys.actorOf(Props.create(TStorageConfigActor.class));
         final Http http = Http.get(sys);
