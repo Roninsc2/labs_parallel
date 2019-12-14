@@ -9,6 +9,7 @@ import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
 import akka.pattern.Patterns;
 import akkaZookeeper.packet.TServerPkt;
+import org.apache.zookeeper.KeeperException;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -24,7 +25,7 @@ public class TServer extends AllDirectives {
     private Http http;
     private ActorRef actor;
 
-    TServer(final Http http, int port, ActorRef actor) {
+    TServer(final Http http, int port, ActorRef actor) throws KeeperException, InterruptedException {
         this.actor = actor;
         this.http = http;
         TServiceZK serviceZK = new TServiceZK(actor);
