@@ -14,7 +14,7 @@ import java.util.concurrent.CompletionStage;
 
 public class TAnonymizationApp {
 
-    private static final String ACTOR_SYSTEM = "ping";
+    private static final String ACTOR_SYSTEM = "anonymization";
     private static final String HOST = "localhost";
     private static final int PORT = 8080;
     private static final String START_MESSAGE = "Server started, http://" + HOST + ":" + PORT + "/\n";
