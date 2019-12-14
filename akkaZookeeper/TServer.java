@@ -11,6 +11,7 @@ import akka.pattern.Patterns;
 import akkaZookeeper.packet.TServerPkt;
 import org.apache.zookeeper.KeeperException;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.concurrent.CompletionStage;
@@ -25,7 +26,7 @@ public class TServer extends AllDirectives {
     private Http http;
     private ActorRef actor;
 
-    TServer(final Http http, int port, ActorRef actor) throws KeeperException, InterruptedException {
+    TServer(final Http http, int port, ActorRef actor) throws KeeperException, InterruptedException, IOException {
         this.actor = actor;
         this.http = http;
         TServiceZK serviceZK = new TServiceZK(actor);
