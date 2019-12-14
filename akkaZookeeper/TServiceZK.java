@@ -1,6 +1,7 @@
 package akkaZookeeper;
 
 import akka.actor.ActorRef;
+import akkaZookeeper.packet.TServerListPkt;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
@@ -36,6 +37,8 @@ public class TServiceZK {
                 byte[] serveUrl = zk.getData(ROOT_PATH + "/" + nodeName, null, null);
                 servers.add(new String(serveUrl));
             }
+
+            actor.tell(new TServerListPkt(servers.toArray(new String[0])), ActorRef.noSender());
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
         }
