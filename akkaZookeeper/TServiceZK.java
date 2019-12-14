@@ -30,7 +30,7 @@ public class TServiceZK {
                 CreateMode.EPHEMERAL
         );
     }
-    
+
     private void watchServers() {
         try {
             List<String> serverNodes = zk.getChildren(ROOT_PATH, event -> {
