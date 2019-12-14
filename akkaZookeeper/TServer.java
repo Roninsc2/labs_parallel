@@ -57,7 +57,7 @@ public class TServer extends AllDirectives {
     }
 
     private CompletionStage<HttpResponse> redirect(String url, int c) {
-        return Patterns.ask(actor, new TServerPkt(), TIMEOUT)
+        return Patterns.ask(actor, new TServerPkt(), Duration.ofMillis(TIMEOUT))
                 .thenCompose(serverUrl -> fetch(createRedirectUrl((String) serverUrl, url, c)));
     }
 
