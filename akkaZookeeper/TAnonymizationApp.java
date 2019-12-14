@@ -23,7 +23,7 @@ public class TAnonymizationApp {
 
     public static void main(String[] args) throws IOException {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
-        ActorRef = sys.actorOf(Props.create(TStorageConfigActor.class));
+        ActorRef actor = sys.actorOf(Props.create(TStorageConfigActor.class));
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
 
