@@ -23,7 +23,7 @@ public class TServiceZK {
         watchServers();
     }
 
-    public void createServer(String url) {
+    public void createServer(String url) throws KeeperException, InterruptedException {
         zk.create(
                 NODES_PATH,
                 url.getBytes(),
