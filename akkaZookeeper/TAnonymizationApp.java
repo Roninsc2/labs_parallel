@@ -20,7 +20,7 @@ public class TAnonymizationApp {
 
     private static final String ACTOR_SYSTEM = "anonymization";
     private static final String HOST = "localhost";
-    private static final int PORT = 8080;
+    private static final int PORT = 2181;
     private static final String START_MESSAGE = "Server started, http://" + HOST + ":" + PORT + "/\n";
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
