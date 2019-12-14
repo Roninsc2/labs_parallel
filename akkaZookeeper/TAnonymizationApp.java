@@ -31,7 +31,7 @@ public class TAnonymizationApp {
 
         final TServer server = new TServer(http, PORT, actor);
         final Flow<HttpRequest, HttpResponse, NotUsed> flow =
-                server.createRoute().getFlow(materializer);
+                server.createRoute().flow(sys, materializer);
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
                 flow,
