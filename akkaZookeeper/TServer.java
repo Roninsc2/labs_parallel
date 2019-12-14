@@ -48,4 +48,11 @@ public class TServer extends AllDirectives {
             )
         );
     }
+
+    private CompletionStage<HttpResponse> fetch(String url) {
+        return http.singleRequest(HttpRequest.create(url));
+    }
+
+    private CompletionStage<HttpResponse> redirect(String url, int c) {
+    }
 }
