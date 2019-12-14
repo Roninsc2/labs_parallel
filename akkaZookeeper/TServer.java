@@ -19,6 +19,7 @@ public class TServer extends AllDirectives {
     private static final String URL_NAME = "url";
     private static final String COUNT_NAME = "count";
     private static final long TIMEOUT = 3000;
+    private static final String SERVER_URL = "http://localhost:";
 
     private Http http;
     private ActorRef actor;
@@ -27,6 +28,7 @@ public class TServer extends AllDirectives {
         this.actor = actor;
         this.http = http;
         TServiceZK serviceZK = new TServiceZK(actor);
+        serviceZK.createServer();
 
     }
 
