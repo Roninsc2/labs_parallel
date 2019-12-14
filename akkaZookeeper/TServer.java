@@ -1,9 +1,6 @@
 package akkaZookeeper;
 
-import akka.NotUsed;
 import akka.actor.ActorRef;
-import akka.actor.ActorSystem;
-import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
