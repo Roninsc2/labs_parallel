@@ -40,9 +40,9 @@ public class TServer extends AllDirectives {
                     parameter(COUNT_NAME, count -> {
                             int c = Integer.parseInt(count);
 
-                            return Integer.parseInt(count) == 0 ?
+                            return c == 0 ?
                                 completeWithFuture(fetch(url)) :
-                                completeWithFuture(redirect(url, count));
+                                completeWithFuture(redirect(url, c));
                         }
                     )
             )
