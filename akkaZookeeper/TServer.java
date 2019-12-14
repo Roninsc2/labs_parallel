@@ -31,7 +31,6 @@ public class TServer extends AllDirectives {
         this.http = http;
         TServiceZK serviceZK = new TServiceZK(actor);
         serviceZK.createServer(SERVER_URL + port);
-
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> getFlow(ActorMaterializer materializer) {
