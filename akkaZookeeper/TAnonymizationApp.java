@@ -20,7 +20,7 @@ public class TAnonymizationApp {
 
     private static final String ACTOR_SYSTEM = "anonymization";
     private static final String HOST = "localhost";
-    private static final String START_MESSAGE = "Server started, http://" + HOST + ":" + PORT + "/\n";
+    private static final String START_MESSAGE = "Server started, http://" + HOST + ":";
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
