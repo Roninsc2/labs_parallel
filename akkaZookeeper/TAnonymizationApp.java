@@ -23,6 +23,7 @@ public class TAnonymizationApp {
     private static final String START_MESSAGE = "Server started, http://" + HOST + ":";
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
+        int port = Integer.parseInt(args[0]);
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
         ActorRef actor = sys.actorOf(Props.create(TStorageConfigActor.class));
         final Http http = Http.get(sys);
