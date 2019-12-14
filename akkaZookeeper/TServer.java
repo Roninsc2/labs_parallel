@@ -27,8 +27,8 @@ public class TServer extends AllDirectives {
     TServer(final Http http, int port, ActorRef actor) throws KeeperException, InterruptedException, IOException {
         this.actor = actor;
         this.http = http;
-        TServiceZK serviceZK = new TServiceZK(actor);
-        serviceZK.createServer(SERVER_URL + port);
+        TServiceZK serviceZK = new TServiceZK(this.actor);
+        serviceZK.createServer(SERVER_URL, port);
     }
 
     public Route createRoute() {
@@ -56,6 +56,7 @@ public class TServer extends AllDirectives {
     }
 
     private String createRedirectUrl(String serverUrl, String queryUrl, int count) {
+        System.out.println("redirect " + serverUrl + " , " + (count - 1));
         return Uri.create(serverUrl)
                 .query(Query.create(
                         Pair.create(URL_NAME, queryUrl),

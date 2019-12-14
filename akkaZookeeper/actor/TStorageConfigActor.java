@@ -14,6 +14,7 @@ public class TStorageConfigActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(TServerListPkt.class, val -> {
+                    System.out.println("configuration set");
                     this.serverList = val.getServerList();
                 })
                 .match(TServerPkt.class, val -> {

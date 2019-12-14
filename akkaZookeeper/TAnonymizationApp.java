@@ -24,12 +24,14 @@ public class TAnonymizationApp {
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
         int port = Integer.parseInt(args[0]);
+
         ActorSystem sys = ActorSystem.create(ACTOR_SYSTEM);
         ActorRef actor = sys.actorOf(Props.create(TStorageConfigActor.class));
+
         final Http http = Http.get(sys);
         final ActorMaterializer materializer = ActorMaterializer.create(sys);
 
-        final TServer server = new TServer(http, port, actor);
+        TServer server = new TServer(http, port, actor);
         final Flow<HttpRequest, HttpResponse, NotUsed> flow =
                 server.createRoute().flow(sys, materializer);
 
