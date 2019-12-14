@@ -12,9 +12,7 @@ import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Source;
 import akka.stream.javadsl.Sink;
-import akkaStreams.actors.TCacheActor;
-import akkaStreams.packet.TPongPkt;
-import akkaStreams.packet.TPingPkt;
+import akkaZookeeper.packet.TServerPkt;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Dsl;
 
