@@ -35,7 +35,7 @@ public class TAnonymizationApp {
 
         final CompletionStage<ServerBinding> bind = http.bindAndHandle(
                 flow,
-                ConnectHttp.toHost(HOST, PORT),
+                ConnectHttp.toHost(HOST, port),
                 materializer
         );
 
