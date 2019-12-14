@@ -1,4 +1,4 @@
-package akkaStreams.pingApp;
+package akkaZookeeper;
 
 import akka.NotUsed;
 import akka.actor.ActorRef;
