@@ -23,7 +23,7 @@ public class TServer extends AllDirectives {
     private Http http;
     private ActorRef actor;
 
-    TServer(ActorSystem system) {
+    TServer(final Http, int port, ActorRef actor) {
         actor = system.actorOf(Props.create(TCacheActor.class));
     }
 
