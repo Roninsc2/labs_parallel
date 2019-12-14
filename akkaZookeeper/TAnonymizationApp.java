@@ -38,7 +38,7 @@ public class TAnonymizationApp {
                 materializer
         );
 
-        System.out.println(START_MESSAGE);
+        System.out.println(START_MESSAGE + port + "/\n");
         System.in.read();
         bind.thenCompose(ServerBinding::unbind).thenAccept(unbound -> sys.terminate());
 
