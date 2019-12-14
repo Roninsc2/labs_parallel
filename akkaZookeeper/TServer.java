@@ -15,9 +15,7 @@ import akkaZookeeper.packet.TServerPkt;
 import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;
-import java.net.URL;
 import java.time.Duration;
-import java.util.Collections;
 import java.util.concurrent.CompletionStage;
 
 public class TServer extends AllDirectives {
