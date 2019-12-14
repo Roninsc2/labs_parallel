@@ -23,6 +23,15 @@ public class TServiceZK {
         watchServers();
     }
 
+    public void createServer(String url) {
+        zk.create(
+                NODES_PATH,
+                url.getBytes(),
+                ZooDefs.Ids.OPEN_ACL_UNSAFE,
+                CreateMode.EPHEMERAL_SEQUENTIAL
+        );
+    }
+
     private void watchServers() {
         try {
             List<String> serverNodes = zk.getChildren(ROOT_PATH, event -> {
