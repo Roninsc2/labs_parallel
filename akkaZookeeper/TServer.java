@@ -25,6 +25,7 @@ public class TServer extends AllDirectives {
 
     TServer(final Http http, int port, ActorRef actor) {
         this.actor = actor;
+        this.http = http;
 
     }
 
