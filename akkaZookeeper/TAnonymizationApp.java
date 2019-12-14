@@ -15,7 +15,7 @@ import akka.stream.javadsl.Flow;
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
-public class TAkkaStreamsApp {
+public class TAnonymizationApp {
 
     private static final String ACTOR_SYSTEM = "ping";
     private static final String HOST = "localhost";
@@ -42,6 +42,4 @@ public class TAkkaStreamsApp {
         bind.thenCompose(ServerBinding::unbind).thenAccept(unbound -> sys.terminate());
 
     }
-}
-public class TAnonymizationApp {
 }
