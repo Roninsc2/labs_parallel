@@ -48,5 +48,7 @@ public class TStorage {
     private void pollinBackend(ZMQ.Socket socket) {
         ZMsg msg = ZMsg.recvMsg(socket);
         System.out.println("Message ->" + msg.toString());
+        ZFrame content = msg.getLast();
+        
     }
 }
