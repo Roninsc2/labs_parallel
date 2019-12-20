@@ -1,10 +1,9 @@
 package zeroMQ;
 
-import org.zeromq.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+import org.zeromq.*;
 public class TStorage {
     private static int leftBound, rightBound;
     private static final int BACKEND = 0;
