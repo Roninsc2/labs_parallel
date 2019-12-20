@@ -6,6 +6,9 @@ import static zeroMQ.TConfig.*;
 
 public class TClient {
     private static final String ERROR = "CLIENT ERROR";
+    private static final String ERROR = "CLIENT ERROR";
+    private static final String ERROR = "CLIENT ERROR";
+    private static final String ERROR = "CLIENT ERROR";
 
     public static void main(String[] args) {
         try {
@@ -13,7 +16,7 @@ public class TClient {
             ZMQ.Socket client = ctx.createSocket(SocketType.REQ);
             client.setHWM(0);
             client.connect(FRONTEND_SOCK);
-            
+            System.out.println();
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
