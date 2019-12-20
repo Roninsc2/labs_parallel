@@ -27,6 +27,9 @@ public class TStorage {
             ZMQ.Poller poller = ctx.createPoller(1);
             poller.register(backendSoc, ZMQ.Poller.POLLIN);
             long time = System.currentTimeMillis();
+            while (!Thread.currentThread().isInterrupted()) {
+                poller.poll(1);
+            }
         }
     }
 }
