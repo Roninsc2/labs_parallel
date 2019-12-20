@@ -30,6 +30,7 @@ public class TClient {
                     ZMsg result = new ZMsg();
                     result.addString(msg);
                     result.send(client);
+                    ZMsg request = 
                 }
             }
         } catch (ZMQException e) {
