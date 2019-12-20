@@ -31,6 +31,9 @@ public class TClient {
                     result.addString(msg);
                     result.send(client);
                     ZMsg request = ZMsg.recvMsg(client);
+                    if (request == null) {
+                        
+                    }
                 }
             }
         } catch (ZMQException e) {
