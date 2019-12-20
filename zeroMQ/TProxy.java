@@ -31,7 +31,7 @@ public class TProxy {
                 time = cleanCache(commutator, time);
 
                 if (poller.pollin(FRONTEND_MSG) && processFrontendMessage(backend, frontend, commutator)) {
-                    if (processFrontendMessage(backend, frontend, commutator)) break;
+                    break;
                 }
 
                 if (poller.pollin(BACKEND_MSG)) {
