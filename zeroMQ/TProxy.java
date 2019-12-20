@@ -1,9 +1,8 @@
 package zeroMQ;
 
 import org.zeromq.*;
-import scala.collection.Map;
-import scala.collection.mutable.HashMap;
-
+import java.util.HashMap;
+import java.util.Map;
 import static zeroMQ.TConfig.*;
 
 public class TProxy {
