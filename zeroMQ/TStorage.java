@@ -52,7 +52,7 @@ public class TStorage {
         String[] contentArr  = content.toString().split(DELIMITER);
         if (contentArr[0].equals(GET_CMD)) {
             int pos = Integer.parseInt(contentArr[1]);
-            String value =
+            String value = cache.get(pos);
         }
         if (contentArr[0].equals(PUT_CMD)) {
 
