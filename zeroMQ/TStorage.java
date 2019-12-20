@@ -42,6 +42,9 @@ public class TStorage {
                     pollinBackend(backendSoc, cache);
                 }
             }
+        } catch (ZMQException e) {
+            System.out.println(ERROR);
+            e.printStackTrace();
         }
     }
 
