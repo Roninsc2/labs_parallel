@@ -75,7 +75,7 @@ public class TProxy {
             sendError(frontend, msg, NO_CACHE_ERROR);
         } else {
             String[] data = msg.getLast().toString().split(DELIMITER);
-            if (data[0].equals(GET_COMMAND)) {
+            if (data[0].equals(GET_CMD)) {
                 for (Map.Entry<ZFrame, CacheMeta> map : commutator.entrySet()) {
                     if (map.getValue().isIntersect(data[1])) {
                         ZFrame cacheFrame = map.getKey().duplicate();
