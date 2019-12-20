@@ -13,7 +13,7 @@ public class TProxy {
         try {
 
         } catch (ZMQException e) {
-            System.out.println(PROXY_ERROR);
+            System.out.println(ERROR);
         }
     }
 }
