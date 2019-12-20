@@ -39,7 +39,7 @@ public class TStorage {
                     time = System.currentTimeMillis();
                 }
                 if (poller.pollin(BACKEND)) {
-                    pollinBackend()
+                    pollinBackend(backendSoc, cache);
                 }
             }
         }
