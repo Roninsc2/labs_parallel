@@ -18,6 +18,10 @@ public class TClient {
             client.connect(FRONTEND_SOCK);
             System.out.println(READY);
             Scanner in = new Scanner(System.in);
+
+            while (true) {
+                
+            }
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
