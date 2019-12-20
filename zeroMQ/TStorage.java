@@ -39,7 +39,7 @@ public class TStorage {
                     time = System.currentTimeMillis();
                 }
                 if (poller.pollin(BACKEND)) {
-                    pollinBackend(backendSoc, cache);
+                    processBackend(backendSoc, cache);
                 }
             }
         } catch (ZMQException e) {
@@ -48,7 +48,7 @@ public class TStorage {
         }
     }
 
-    private static void pollinBackend(ZMQ.Socket socket, Map<Integer, String> cache) {
+    private static void processBackend(ZMQ.Socket socket, Map<Integer, String> cache) {
         ZMsg msg = ZMsg.recvMsg(socket);
         System.out.println("Message ->" + msg.toString());
         ZFrame content = msg.getLast();
