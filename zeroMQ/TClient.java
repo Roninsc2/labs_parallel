@@ -17,7 +17,7 @@ public class TClient {
             client.setHWM(0);
             client.connect(FRONTEND_SOCK);
             System.out.println(READY);
-            Scanner.in = new Scanner(System.in);
+            Scanner in = new Scanner(System.in);
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
