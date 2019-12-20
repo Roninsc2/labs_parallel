@@ -25,6 +25,7 @@ public class TStorage {
             backendSoc.setHWM(0);
             backendSoc.connect(BACKEND_SOCK);
             ZMQ.Poller poller = ctx.createPoller(1);
+            poller.register(backendSoc, ZMQ.Poller.POLLIN);
         }
     }
 }
