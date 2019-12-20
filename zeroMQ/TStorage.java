@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Scanner;
 import org.zeromq.*;
 
+import zeroMQ.TConfig.*;
+
 public class TStorage {
     private static int leftBound, rightBound;
     private static final int BACKEND = 0;
@@ -22,6 +24,7 @@ public class TStorage {
             ZContext ctx = new ZContext();
             ZMQ.Socket backendSoc = ctx.createSocket(SocketType.DEALER);
             backendSoc.setHWM(0);
+            backendSoc.connect(BAC)
         }
     }
 }
