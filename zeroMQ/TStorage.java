@@ -33,8 +33,9 @@ public class TStorage {
                     ZMsg msgTime = new ZMsg();
                     msgTime.addLast(
                             HEARTBEAT_CMD + DELIMITER + Integer.toString(leftBound)
-                            + DELIMITER + Integer.toString(rightBound);
+                            + DELIMITER + Integer.toString(rightBound)
                     );
+                    msgTime.send(backendSoc);
                 }
             }
         }
