@@ -16,7 +16,7 @@ public class TClient {
             ZMQ.Socket client = ctx.createSocket(SocketType.REQ);
             client.setHWM(0);
             client.connect(FRONTEND_SOCK);
-            System.out.println();
+            System.out.println(READY);
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
