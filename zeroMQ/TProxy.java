@@ -20,6 +20,7 @@ public class TProxy {
             frontend.bind(FRONTEND_SOCK);
             ZMQ.Poller poller = ctx.createPoller(2);
             poller.register(frontend, ZMQ.Poller.POLLIN);
+            poller.register(backend, ZMQ.Poller.POLLIN);
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
