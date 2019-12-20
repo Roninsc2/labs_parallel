@@ -28,7 +28,7 @@ public class TClient {
                     System.out.println(INCORRECT_INPUT);
                 } else {
                     ZMsg result = new ZMsg();
-                    result.addString();
+                    result.addString(msg);
                 }
             }
         } catch (ZMQException e) {
