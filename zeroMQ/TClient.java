@@ -22,7 +22,7 @@ public class TClient {
             while (true) {
                 String msg = in.nextLine();
                 if (msg.equals(EXIT_CMD)) {
-                    break;;
+                    break;
                 }
                 if (!msg.contains(GET_CMD) && !msg.contains(PUT_CMD)) {
                     System.out.println(INCORRECT_INPUT);
