@@ -11,5 +11,6 @@ public class TStorage {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         leftBound = in.nextInt();
+        rightBound = in.nextInt();
     }
 }
