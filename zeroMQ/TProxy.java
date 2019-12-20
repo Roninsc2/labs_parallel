@@ -1,6 +1,7 @@
 package zeroMQ;
 
 import org.zeromq.*;
+import static zeroMQ.TConfig.*;
 
 public class TProxy {
 
