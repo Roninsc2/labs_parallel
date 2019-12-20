@@ -6,6 +6,7 @@ public class TCacheMeta {
 
     public TCacheMeta(String left, String right, long t) {
         leftBound = left;
+        rightBound = right;
     }
 
     public String getLeftBound() {
