@@ -31,6 +31,10 @@ public class TStorage {
                 poller.poll(1);
                 if (System.currentTimeMillis() - time > EPS_TIME) {
                     ZMsg msgTime = new ZMsg();
+                    msgTime.addLast(
+                            HEARTBEAT_CMD + DELIMITER + Integer.toString(leftBound)
+                            + DELIMITER + Integer.toString(rightBound);
+                    );
                 }
             }
         }
