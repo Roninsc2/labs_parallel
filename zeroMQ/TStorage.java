@@ -49,6 +49,6 @@ public class TStorage {
         ZMsg msg = ZMsg.recvMsg(socket);
         System.out.println("Message ->" + msg.toString());
         ZFrame content = msg.getLast();
-        
+        String[] contentArr  = content.toString().split(DELIMITER);
     }
 }
