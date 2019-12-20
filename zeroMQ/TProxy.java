@@ -66,7 +66,7 @@ public class TProxy {
         }
     }
 
-    private static boolean processFrontendMessage(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
+    private static boolean processFrontend(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
         ZMsg msg = ZMsg.recvMsg(frontend);
         if (msg == null) {
             return true;
