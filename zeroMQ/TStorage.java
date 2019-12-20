@@ -1,5 +1,6 @@
 package zeroMQ;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class TStorage {
