@@ -21,7 +21,7 @@ public class TClient {
 
             while (true) {
                 String msg = in.nextLine();
-                if (msg.equals()) {
+                if (msg.equals(EXIT_CMD)) {
 
                 }
                 if () {
