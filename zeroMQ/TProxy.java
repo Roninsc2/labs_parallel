@@ -16,6 +16,7 @@ public class TProxy {
             ZMQ.Socket frontend = ctx.createSocket(SocketType.ROUTER);
             backend.setHWM(0);
             frontend.setHWM(0);
+            backend.bind(BACKEND_SOCK);
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
