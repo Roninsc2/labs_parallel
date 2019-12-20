@@ -26,6 +26,9 @@ public class TProxy {
             poller.register(backend, ZMQ.Poller.POLLIN);
             Map<ZFrame, TCacheMeta> commutator = new HashMap<>();
             long time = System.currentTimeMillis();
+            while (!Thread.currentThread().isInterrupted()) {
+                
+            }
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
