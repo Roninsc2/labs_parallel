@@ -12,6 +12,7 @@ public class TClient {
 
         } catch (ZMQException e) {
             System.out.println(ERROR);
+            e.printStackTrace();
 
         }
     }
