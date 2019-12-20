@@ -17,6 +17,7 @@ public class TProxy {
             backend.setHWM(0);
             frontend.setHWM(0);
             backend.bind(BACKEND_SOCK);
+            frontend.bind(FRONTEND_SOCK);
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
