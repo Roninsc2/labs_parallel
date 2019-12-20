@@ -34,7 +34,6 @@ public class TClient {
                     if (request == null) {
                         break;
                     }
-
                     System.out.println(request.toString());
                     request.destroy();
                 }
