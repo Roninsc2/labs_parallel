@@ -2,6 +2,7 @@ package zeroMQ;
 
 import org.zeromq.*;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import static zeroMQ.TConfig.*;
 
