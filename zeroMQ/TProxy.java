@@ -1,6 +1,8 @@
 package zeroMQ;
 
 import org.zeromq.*;
+import scala.collection.Map;
+
 import static zeroMQ.TConfig.*;
 
 public class TProxy {
@@ -21,7 +23,7 @@ public class TProxy {
             ZMQ.Poller poller = ctx.createPoller(2);
             poller.register(frontend, ZMQ.Poller.POLLIN);
             poller.register(backend, ZMQ.Poller.POLLIN);
-            
+            Map<ZFrame, TCacheMeta> commutator = 
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
