@@ -61,7 +61,7 @@ public class TProxy {
                 }
             }
         } catch (ZMQException e) {
-            System.out.println(PROXY_ERROR);
+            System.out.println(ERROR);
             e.printStackTrace();
         }
     }
@@ -76,7 +76,7 @@ public class TProxy {
         } else {
             String[] data = msg.getLast().toString().split(DELIMITER);
             if (data[0].equals(GET_CMD)) {
-                for (Map.Entry<ZFrame, CacheMeta> map : commutator.entrySet()) {
+                for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
                     if (map.getValue().isIntersect(data[1])) {
                         ZFrame cacheFrame = map.getKey().duplicate();
                         msg.addFirst(cacheFrame);
