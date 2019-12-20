@@ -20,5 +20,6 @@ public class TCacheMeta {
         int val = Integer.parseInt(v);
         int l = Integer.parseInt(leftBound);
         int r = Integer.parseInt(rightBound);
+        return l <= val && val <= r;
     }
 }
