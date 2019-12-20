@@ -9,6 +9,6 @@ public class TCacheMeta {
     }
 
     public String getLeftBound() {
-        
+        return leftBound;
     }
 }
