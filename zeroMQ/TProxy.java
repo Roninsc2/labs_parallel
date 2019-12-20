@@ -34,30 +34,8 @@ public class TProxy {
                     break;
                 }
 
-                if (poller.pollin(BACKEND_MSG)) {
-                    ZMsg msg = ZMsg.recvMsg(backend);
-                    if (msg == null) {
-                        break;
-                    }
-                    if (msg.getLast().toString().contains(HEARTBEAT_CMD)) {
-                        if (!commutator.containsKey(msg.getFirst())) {
-                            ZFrame data = msg.getLast();
-                            String[] fields = data.toString().split(DELIMITER);
-                            TCacheMeta tmp = new TCacheMeta(
-                                    fields[1],
-                                    fields[2],
-                                    System.currentTimeMillis()
-                            );
-                            commutator.put(msg.getFirst().duplicate(), tmp);
-                            System.out.println("New cache -> " + msg.getFirst() + " " + tmp.getLeftBound() + " " + tmp.getRightBound());
-                        }else{
-                            commutator.get(msg.getFirst().duplicate()).setTime(System.currentTimeMillis());
-                        }
-                    } else {
-                        System.out.println("NO HEARTBEAT ->" + msg);
-                        msg.pop();
-                        msg.send(frontend);
-                    }
+                if (poller.pollin(BACKEND_MSG) && processBac) {
+                    break;
                 }
             }
         } catch (ZMQException e) {
