@@ -21,6 +21,7 @@ public class TStorage {
         try {
             ZContext ctx = new ZContext();
             ZMQ.Socket backendSoc = ctx.createSocket(SocketType.DEALER);
+            backendSoc.setHWM(0);
         }
     }
 }
