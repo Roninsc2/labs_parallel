@@ -62,7 +62,7 @@ public class TStorage {
             String value = contentArr[2];
             cache.put(pos, value);
             msg.pollLast();
-            msg.addLast(value);
+            msg.addLast(PUT_DONE);
             msg.send(socket);
         }
     }
