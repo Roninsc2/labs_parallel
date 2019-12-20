@@ -102,38 +102,29 @@ public class TProxy {
     }
 
     private static boolean processBackend(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
-        ZMsg msg = ZMsg.recvMsg(frontend);
+        ZMsg msg = ZMsg.recvMsg(backend);
         if (msg == null) {
-            return true;
+            break;
         }
-        if (commutator.isEmpty()) {
-            sendError(frontend, msg, NO_CACHE_ERROR);
-        } else {
-            String[] data = msg.getLast().toString().split(DELIMITER);
-            if (data[0].equals(GET_CMD)) {
-                for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
-                    if (map.getValue().isIntersect(data[1])) {
-                        ZFrame cacheFrame = map.getKey().duplicate();
-                        msg.addFirst(cacheFrame);
-                        msg.send(backend);
-                    }
-                }
-            } else {
-                if (data[0].equals(PUT_CMD)) {
-                    for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
-                        if (map.getValue().isIntersect(data[1])) {
-                            ZMsg tmp = msg.duplicate();
-                            ZFrame cacheFrame = map.getKey().duplicate();
-                            tmp.addFirst(cacheFrame);
-                            tmp.send(backend);
-                        }
-                    }
-                } else {
-                    sendError(frontend, msg, INVALID_DATA);
-                }
+        if (msg.getLast().toString().contains(HEARTBEAT_CMD)) {
+            if (!commutator.containsKey(msg.getFirst())) {
+                ZFrame data = msg.getLast();
+                String[] fields = data.toString().split(DELIMITER);
+                TCacheMeta tmp = new TCacheMeta(
+                        fields[1],
+                        fields[2],
+                        System.currentTimeMillis()
+                );
+                commutator.put(msg.getFirst().duplicate(), tmp);
+                System.out.println("New cache -> " + msg.getFirst() + " " + tmp.getLeftBound() + " " + tmp.getRightBound());
+            }else{
+                commutator.get(msg.getFirst().duplicate()).setTime(System.currentTimeMillis());
             }
+        } else {
+            System.out.println("NO HEARTBEAT ->" + msg);
+            msg.pop();
+            msg.send(frontend);
         }
-        return false;
     }
 
     private static void sendError(ZMQ.Socket frontend, ZMsg msg, String noCacheError) {
