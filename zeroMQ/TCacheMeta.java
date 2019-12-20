@@ -7,4 +7,8 @@ public class TCacheMeta {
     public TCacheMeta() {
 
     }
+
+    public String getLeftBound() {
+        
+    }
 }
