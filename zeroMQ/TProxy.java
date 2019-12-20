@@ -39,7 +39,7 @@ public class TProxy {
                     if (msg == null) {
                         break;
                     }
-                    if (msg.getLast().toString().contains(HEARTBEAT_COMMAND)) {
+                    if (msg.getLast().toString().contains(HEARTBEAT_CMD)) {
                         if (!commutator.containsKey(msg.getFirst())) {
                             ZFrame data = msg.getLast();
                             String[] fields = data.toString().split(DELIMITER);
