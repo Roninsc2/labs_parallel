@@ -45,13 +45,14 @@ public class TStorage {
         }
     }
 
-    private void pollinBackend(ZMQ.Socket socket) {
+    private void pollinBackend(ZMQ.Socket socket, Map<Integer, String> cache) {
         ZMsg msg = ZMsg.recvMsg(socket);
         System.out.println("Message ->" + msg.toString());
         ZFrame content = msg.getLast();
         String[] contentArr  = content.toString().split(DELIMITER);
         if (contentArr[0].equals(GET_CMD)) {
             int pos = Integer.parseInt(contentArr[1]);
+            String value =
         }
         if (contentArr[0].equals(PUT_CMD)) {
 
