@@ -16,7 +16,7 @@ public class TCacheMeta {
         return rightBound;
     }
 
-    public boolean isIntersect(String val) {
-        int val = Integer.parseInt(val);
+    public boolean isIntersect(String v) {
+        int val = Integer.parseInt(v);
     }
 }
