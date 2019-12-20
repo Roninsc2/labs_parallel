@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import org.zeromq.*;
-
-import zeroMQ.TConfig.*;
+import static zeroMQ.TConfig.*;
 
 public class TStorage {
     private static int leftBound, rightBound;
