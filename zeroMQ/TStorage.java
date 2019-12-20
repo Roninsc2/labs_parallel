@@ -1,6 +1,7 @@
 package zeroMQ;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class TStorage {
@@ -14,6 +15,6 @@ public class TStorage {
         leftBound = in.nextInt();
         rightBound = in.nextInt();
 
-        Map<Integer, String> cache = new HashMap<>;
+        Map<Integer, String> cache = new HashMap<>();
     }
 }
