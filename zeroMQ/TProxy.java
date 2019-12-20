@@ -14,7 +14,7 @@ public class TProxy {
             ZContext ctx = new ZContext();
             ZMQ.Socket backend = ctx.createSocket(SocketType.ROUTER);
             ZMQ.Socket frontend = ctx.createSocket(SocketType.ROUTER);
-            
+            backend.setHWM(0);
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
