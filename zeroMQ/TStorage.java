@@ -36,6 +36,7 @@ public class TStorage {
                             + DELIMITER + Integer.toString(rightBound)
                     );
                     msgTime.send(backendSoc);
+                    time = System.currentTimeMillis();
                 }
             }
         }
