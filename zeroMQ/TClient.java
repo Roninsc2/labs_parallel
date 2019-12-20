@@ -24,7 +24,7 @@ public class TClient {
                 if (msg.equals(EXIT_CMD)) {
                     break;;
                 }
-                if () {
+                if (!msg.contains(GET_CMD) && !msg.contains(PUT_CMD)) {
 
                 } else {
 
