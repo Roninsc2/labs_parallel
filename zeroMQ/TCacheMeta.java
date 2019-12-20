@@ -11,4 +11,8 @@ public class TCacheMeta {
     public String getLeftBound() {
         return leftBound;
     }
+
+    public String getRightBound() {
+        return rightBound;
+    }
 }
