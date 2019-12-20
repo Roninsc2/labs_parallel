@@ -11,7 +11,7 @@ public class TClient {
         try {
 
         } catch (ZMQException e) {
-            System.out.println(E);
+            System.out.println(ERROR);
 
         }
     }
