@@ -9,7 +9,7 @@ public class TClient {
 
     public static void main(String[] args) {
         try {
-            
+            ZContext ctx = new ZContext();
         } catch (ZMQException e) {
             System.out.println(ERROR);
             e.printStackTrace();
