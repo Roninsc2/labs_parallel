@@ -20,7 +20,7 @@ public class TClient {
             Scanner in = new Scanner(System.in);
 
             while (true) {
-                
+                String msg = in.nextLine();
             }
         } catch (ZMQException e) {
             System.out.println(ERROR);
