@@ -30,7 +30,7 @@ public class TStorage {
             while (!Thread.currentThread().isInterrupted()) {
                 poller.poll(1);
                 if (System.currentTimeMillis() - time > EPS_TIME) {
-                    ZMsg msgTime =  
+                    ZMsg msgTime = new ZMsg();
                 }
             }
         }
