@@ -12,5 +12,7 @@ public class TStorage {
         Scanner in = new Scanner(System.in);
         leftBound = in.nextInt();
         rightBound = in.nextInt();
+
+        Map<Integer, String> cache = new HashMap<>;
     }
 }
