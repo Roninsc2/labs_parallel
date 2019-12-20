@@ -33,7 +33,7 @@ public class TProxy {
                 if (poller.pollin(FRONTEND_MSG) && processFrontend(backend, frontend, commutator)) {
                     break;
                 }
-                
+
                 if (poller.pollin(BACKEND_MSG) && processBackend(backend, frontend, commutator)) {
                     break;
                 }
