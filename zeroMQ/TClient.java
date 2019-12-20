@@ -32,7 +32,7 @@ public class TClient {
                     result.send(client);
                     ZMsg request = ZMsg.recvMsg(client);
                     if (request == null) {
-                        
+                        break;
                     }
                 }
             }
