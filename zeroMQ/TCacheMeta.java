@@ -22,4 +22,8 @@ public class TCacheMeta {
         int r = Integer.parseInt(rightBound);
         return l <= val && val <= r;
     }
+
+    public long getTime() {
+        return time;
+    }
 }
