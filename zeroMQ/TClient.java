@@ -36,6 +36,7 @@ public class TClient {
                     }
 
                     System.out.println(request.toString());
+                    request.destroy();
                 }
             }
         } catch (ZMQException e) {
