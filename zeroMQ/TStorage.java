@@ -50,5 +50,11 @@ public class TStorage {
         System.out.println("Message ->" + msg.toString());
         ZFrame content = msg.getLast();
         String[] contentArr  = content.toString().split(DELIMITER);
+        if (contentArr[0].equals(GET_CMD)) {
+            int pos = Integer.parseInt(contentArr[1]);
+        }
+        if (contentArr[0].equals(PUT_CMD)) {
+
+        }
     }
 }
