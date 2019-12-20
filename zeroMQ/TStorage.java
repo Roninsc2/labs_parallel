@@ -1,5 +1,7 @@
 package zeroMQ;
 
+import java.util.Scanner;
+
 public class TStorage {
     private static int leftBound, rightBound;
     private static final int BACKEND = 0;
@@ -7,6 +9,6 @@ public class TStorage {
     private static final String DONE = "PUT DONE";
 
     public static void main(String[] args) {
-        
+        Scanner in = new Scanner(System.in);
     }
 }
