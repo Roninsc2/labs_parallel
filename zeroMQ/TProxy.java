@@ -104,7 +104,7 @@ public class TProxy {
     private static boolean processBackend(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
         ZMsg msg = ZMsg.recvMsg(backend);
         if (msg == null) {
-            break;
+            return true;
         }
         if (msg.getLast().toString().contains(HEARTBEAT_CMD)) {
             if (!commutator.containsKey(msg.getFirst())) {
