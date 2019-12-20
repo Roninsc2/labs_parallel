@@ -21,6 +21,14 @@ public class TClient {
 
             while (true) {
                 String msg = in.nextLine();
+                if (msg.equals()) {
+
+                }
+                if () {
+
+                } else {
+
+                }
             }
         } catch (ZMQException e) {
             System.out.println(ERROR);
