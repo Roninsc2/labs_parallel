@@ -14,6 +14,7 @@ public class TProxy {
 
         } catch (ZMQException e) {
             System.out.println(ERROR);
+            e.printStackTrace();
         }
     }
 }
