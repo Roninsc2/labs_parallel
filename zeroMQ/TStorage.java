@@ -54,7 +54,7 @@ public class TStorage {
             int pos = Integer.parseInt(contentArr[1]);
             String value = cache.get(pos);
             msg.pollLast();
-            msg.addLast(DONE);
+            msg.addLast(PUT_DONE);
         }
         if (contentArr[0].equals(PUT_CMD)) {
 
