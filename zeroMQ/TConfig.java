@@ -1,8 +1,8 @@
 package zeroMQ;
 
 public class TConfig {
-    public static final String BACKEND_SOCK = "tcp://localhost:2050";
-    public static final String FRONTEND_SOCK = "tcp://localhost:2052";
+    public static final String BACKEND_SOCK = "tcp://localhost:31100";
+    public static final String FRONTEND_SOCK = "tcp://localhost:31200";
     public static final String HEARTBEAT_CMD = "Heartbeat";
     public static final String GET_CMD = "GET";
     public static final String PUT_CMD = "PUT";
