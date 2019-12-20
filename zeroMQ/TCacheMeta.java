@@ -15,4 +15,8 @@ public class TCacheMeta {
     public String getRightBound() {
         return rightBound;
     }
+
+    public boolean isIntersect(String val) {
+        
+    }
 }
