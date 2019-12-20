@@ -101,6 +101,41 @@ public class TProxy {
         return false;
     }
 
+    private static boolean processFrontend(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
+        ZMsg msg = ZMsg.recvMsg(frontend);
+        if (msg == null) {
+            return true;
+        }
+        if (commutator.isEmpty()) {
+            sendError(frontend, msg, NO_CACHE_ERROR);
+        } else {
+            String[] data = msg.getLast().toString().split(DELIMITER);
+            if (data[0].equals(GET_CMD)) {
+                for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
+                    if (map.getValue().isIntersect(data[1])) {
+                        ZFrame cacheFrame = map.getKey().duplicate();
+                        msg.addFirst(cacheFrame);
+                        msg.send(backend);
+                    }
+                }
+            } else {
+                if (data[0].equals(PUT_CMD)) {
+                    for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
+                        if (map.getValue().isIntersect(data[1])) {
+                            ZMsg tmp = msg.duplicate();
+                            ZFrame cacheFrame = map.getKey().duplicate();
+                            tmp.addFirst(cacheFrame);
+                            tmp.send(backend);
+                        }
+                    }
+                } else {
+                    sendError(frontend, msg, INVALID_DATA);
+                }
+            }
+        }
+        return false;
+    }
+
     private static void sendError(ZMQ.Socket frontend, ZMsg msg, String noCacheError) {
         ZMsg errMsg = new ZMsg();
         errMsg.add(noCacheError);
