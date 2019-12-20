@@ -6,7 +6,7 @@ import static zeroMQ.TConfig.*;
 
 public class TClient {
     private static final String ERROR = "CLIENT ERROR";
-    private static final String EXIT_CMD = "CLIENT ERROR";
+    private static final String EXIT_CMD = "EXIT";
     private static final String ERROR = "CLIENT ERROR";
     private static final String ERROR = "CLIENT ERROR";
 
