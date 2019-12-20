@@ -111,7 +111,7 @@ public class TProxy {
     private static long cleanCache(Map<ZFrame, TCacheMeta> commutator, long time) {
         if(!commutator.isEmpty() && System.currentTimeMillis() - time > EPS_TIME * 2){
             for(Iterator<Map.Entry<ZFrame, TCacheMeta>> it = commutator.entrySet().iterator(); it.hasNext(); ){
-                Map.Entry<ZFrame, CacheMeta> entry = it.next();
+                Map.Entry<ZFrame, TCacheMeta> entry = it.next();
                 if(Math.abs(entry.getValue().getTime() - System.currentTimeMillis()) > EPS_TIME * 1.5){
                     System.out.println("THIS CACHE WAS DELETED -> " + entry.getKey());
                     it.remove();
