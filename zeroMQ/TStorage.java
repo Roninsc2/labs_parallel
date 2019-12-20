@@ -16,5 +16,9 @@ public class TStorage {
         rightBound = in.nextInt();
 
         Map<Integer, String> cache = new HashMap<>();
+
+        try {
+            ZContext ctx = new ZContext();
+        }
     }
 }
