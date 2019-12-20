@@ -43,7 +43,7 @@ public class TProxy {
                         if (!commutator.containsKey(msg.getFirst())) {
                             ZFrame data = msg.getLast();
                             String[] fields = data.toString().split(DELIMITER);
-                            CacheMeta tmp = new CacheMeta(
+                            TCacheMeta tmp = new TCacheMeta(
                                     fields[1],
                                     fields[2],
                                     System.currentTimeMillis()
@@ -66,7 +66,7 @@ public class TProxy {
         }
     }
 
-    private static boolean processFrontendMessage(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, CacheMeta> commutator) {
+    private static boolean processFrontendMessage(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
         ZMsg msg = ZMsg.recvMsg(frontend);
         if (msg == null) {
             return true;
