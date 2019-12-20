@@ -55,6 +55,7 @@ public class TStorage {
             String value = cache.get(pos);
             msg.pollLast();
             msg.addLast(PUT_DONE);
+            msg.send(socket);
         }
         if (contentArr[0].equals(PUT_CMD)) {
 
