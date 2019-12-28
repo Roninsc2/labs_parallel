@@ -102,14 +102,14 @@ public class TProxy {
     }
 
     private static void processFrontendPut(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
-                    for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
-                        if (map.getValue().isIntersect(data[1])) {
-                            ZMsg tmp = msg.duplicate();
-                            ZFrame cacheFrame = map.getKey().duplicate();
-                            tmp.addFirst(cacheFrame);
-                            tmp.send(backend);
-                        }
-                    }
+        for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
+            if (map.getValue().isIntersect(data[1])) {
+                ZMsg tmp = msg.duplicate();
+                ZFrame cacheFrame = map.getKey().duplicate();
+                tmp.addFirst(cacheFrame);
+                tmp.send(backend);
+            }
+        }                
     }
 
     private static boolean processBackend(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
