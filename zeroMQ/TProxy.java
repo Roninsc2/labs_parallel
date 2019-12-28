@@ -51,17 +51,10 @@ public class TProxy {
         }
         if (commutator.isEmpty()) {
             sendError(frontend, msg, NO_CACHE_ERROR);
-        } else {
-            String[] data = msg.getLast().toString().split(DELIMITER);
-            if (data[0].equals(GET_CMD)) {
-                processFrontendGet()
-            } else {
-                if (data[0].equals(PUT_CMD)) {
-                    processFrontendPut();
-                } else {
-                    sendError(frontend, msg, INVALID_DATA);
-                }
-            }
+        } else if (!processFrontendGet(msg, backend, commutator) ||
+                   !processFrontendPut(msg, backend, commutator))
+        {
+            sendError(frontend, msg, INVALID_DATA);
         }
         return false;
     }
