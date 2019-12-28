@@ -94,7 +94,7 @@ public class TProxy {
         return false;
     }
 
-    private void processHeartbeat(Map<ZFrame, TCacheMeta> commutator, ZMsg msg) {
+    private void processBackendHeartbeat(Map<ZFrame, TCacheMeta> commutator, ZMsg msg) {
         if (!commutator.containsKey(msg.getFirst())) {
             ZFrame data = msg.getLast();
             String[] fields = data.toString().split(DELIMITER);
