@@ -52,7 +52,6 @@ public class TProxy {
         if (commutator.isEmpty()) {
             sendError(frontend, msg, NO_CACHE_ERROR);
         } else  {
-            String[] data = msg.getLast().toString().split(DELIMITER);
             if (!processFrontendGet(data, msg, backend, commutator) &&
                     !processFrontendPut(data, msg, backend, commutator))
             {
@@ -63,6 +62,7 @@ public class TProxy {
     }
 
     private static boolean processFrontendGet(String[] data, ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
+        String[] data = msg.getLast().toString().split(DELIMITER);
         if (data[0].equals(GET_CMD)) {
             for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
                 if (map.getValue().isIntersect(data[1])) {
