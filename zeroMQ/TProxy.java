@@ -54,7 +54,7 @@ public class TProxy {
         } else if (!processFrontendGet(msg, backend, commutator) &&
                     !processFrontendPut(msg, backend, commutator))
         {
-                sendError(frontend, msg, INVALID_DATA);
+            sendError(frontend, msg, INVALID_DATA);
         }
         return false;
     }
