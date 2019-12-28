@@ -60,7 +60,7 @@ public class TProxy {
         return false;
     }
 
-    private static boolean processFrontendGet(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
+    private static boolean processFrontendGet(String[] data, ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
         if (data[0].equals(GET_CMD)) {
             for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
                 if (map.getValue().isIntersect(data[1])) {
