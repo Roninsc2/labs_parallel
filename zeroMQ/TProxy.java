@@ -85,25 +85,29 @@ public class TProxy {
             return true;
         }
         if (msg.getLast().toString().contains(HEARTBEAT_CMD)) {
-            if (!commutator.containsKey(msg.getFirst())) {
-                ZFrame data = msg.getLast();
-                String[] fields = data.toString().split(DELIMITER);
-                TCacheMeta tmp = new TCacheMeta(
-                        fields[1],
-                        fields[2],
-                        System.currentTimeMillis()
-                );
-                commutator.put(msg.getFirst().duplicate(), tmp);
-                System.out.println("New cache -> " + msg.getFirst() + " " + tmp.getLeftBound() + " " + tmp.getRightBound());
-            }else{
-                commutator.get(msg.getFirst().duplicate()).setTime(System.currentTimeMillis());
-            }
+            processHeartbeat(commutator, msg);
         } else {
             System.out.println("NO HEARTBEAT ->" + msg);
             msg.pop();
             msg.send(frontend);
         }
         return false;
+    }
+
+    private void processHeartbeat(Map<ZFrame, TCacheMeta> commutator, ZMsg msg) {
+        if (!commutator.containsKey(msg.getFirst())) {
+            ZFrame data = msg.getLast();
+            String[] fields = data.toString().split(DELIMITER);
+            TCacheMeta tmp = new TCacheMeta(
+                    fields[1],
+                    fields[2],
+                    System.currentTimeMillis()
+            );
+            commutator.put(msg.getFirst().duplicate(), tmp);
+            System.out.println("New cache -> " + msg.getFirst() + " " + tmp.getLeftBound() + " " + tmp.getRightBound());
+        } else {
+            commutator.get(msg.getFirst().duplicate()).setTime(System.currentTimeMillis());
+        }
     }
 
     private static void sendError(ZMQ.Socket frontend, ZMsg msg, String noCacheError) {
