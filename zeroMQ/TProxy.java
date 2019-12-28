@@ -61,7 +61,8 @@ public class TProxy {
                         msg.send(backend);
                     }
                 }
-            } else if (data[0].equals(PUT_CMD)) {
+            } else {
+                if (data[0].equals(PUT_CMD)) {
                     for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
                         if (map.getValue().isIntersect(data[1])) {
                             ZMsg tmp = msg.duplicate();
@@ -74,6 +75,7 @@ public class TProxy {
                     sendError(frontend, msg, INVALID_DATA);
                 }
             }
+        }
         return false;
     }
 
