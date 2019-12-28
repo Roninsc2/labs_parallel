@@ -76,7 +76,7 @@ public class TProxy {
         return false;
     }
 
-    private static boolean processFrontendPut(String[] data, ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
+    private static boolean processFrontendPut(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
         String[] data = msg.getLast().toString().split(DELIMITER);
         if (data[0].equals(PUT_CMD)) {
             for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
