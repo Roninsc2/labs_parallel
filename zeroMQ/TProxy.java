@@ -54,13 +54,7 @@ public class TProxy {
         } else {
             String[] data = msg.getLast().toString().split(DELIMITER);
             if (data[0].equals(GET_CMD)) {
-                for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
-                    if (map.getValue().isIntersect(data[1])) {
-                        ZFrame cacheFrame = map.getKey().duplicate();
-                        msg.addFirst(cacheFrame);
-                        msg.send(backend);
-                    }
-                }
+                processFrontendGet()
             } else {
                 if (data[0].equals(PUT_CMD)) {
                     for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
