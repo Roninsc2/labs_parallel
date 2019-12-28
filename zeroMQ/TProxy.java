@@ -74,7 +74,6 @@ public class TProxy {
                     sendError(frontend, msg, INVALID_DATA);
                 }
             }
-        }
         return false;
     }
 
