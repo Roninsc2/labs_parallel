@@ -92,25 +92,14 @@ public class TStorage {
         }
     }
 
-    private static void processBackendPut(String[] contentArr, ZMQ.Socket socket, Map<Integer, String> cache) {
-        ZMsg msg = ZMsg.recvMsg(socket);
-        System.out.println("Message ->" + msg.toString());
-        ZFrame content = msg.getLast();
-        String[] contentArr  = content.toString().split(DELIMITER);
-        if (contentArr[0].equals(GET_CMD)) {
-            int pos = Integer.parseInt(contentArr[1]);
-            String value = cache.get(pos);
-            msg.pollLast();
-            msg.addLast(value);
-            msg.send(socket);
-        }
-        if (contentArr[0].equals(PUT_CMD)) {
+    private static void processBackendPut(ZMsg msg, String[] contentArr, ZMQ.Socket socket, Map<Integer, String> cache) {
+
             int pos = Integer.parseInt(contentArr[1]);
             String value = contentArr[2];
             cache.put(pos, value);
             msg.pollLast();
             msg.addLast(PUT_DONE);
             msg.send(socket);
-        }
+
     }
 }
