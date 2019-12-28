@@ -93,6 +93,7 @@ public class TProxy {
                 }
             }
         }
+        return false;
     }
 
     private static boolean processBackend(ZMQ.Socket backend, ZMQ.Socket frontend, Map<ZFrame, TCacheMeta> commutator) {
