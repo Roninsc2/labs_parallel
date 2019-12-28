@@ -82,6 +82,7 @@ public class TProxy {
     }
 
     private static boolean processFrontendPut(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
+        String[] data = msg.getLast().toString().split(DELIMITER);
         for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
             if (map.getValue().isIntersect(data[1])) {
                 ZMsg tmp = msg.duplicate();
