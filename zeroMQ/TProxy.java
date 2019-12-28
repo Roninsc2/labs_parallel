@@ -51,9 +51,8 @@ public class TProxy {
         }
         if (commutator.isEmpty()) {
             sendError(frontend, msg, NO_CACHE_ERROR);
-        } else  {
-            if (!processFrontendGet(data, msg, backend, commutator) &&
-                    !processFrontendPut(data, msg, backend, commutator))
+        } else if (!processFrontendGet(msg, backend, commutator) &&
+                    !processFrontendPut(msg, backend, commutator))
             {
                 sendError(frontend, msg, INVALID_DATA);
             }
