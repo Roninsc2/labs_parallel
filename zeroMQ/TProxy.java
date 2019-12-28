@@ -54,7 +54,8 @@ public class TProxy {
         } else  {
             String[] data = msg.getLast().toString().split(DELIMITER);
             if (!processFrontendGet(data, msg, backend, commutator) ||
-                    !processFrontendPut(data, msg, backend, commutator)) {
+                    !processFrontendPut(data, msg, backend, commutator))
+            {
                 sendError(frontend, msg, INVALID_DATA);
             }
         }
