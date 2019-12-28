@@ -70,7 +70,7 @@ public class TStorage {
         }
     }
 
-    private static void processBackendGet(ZMQ.Socket socket, Map<Integer, String> cache) {
+    private static void processBackendGet(ZMsg msg, String[] contentArr,ZMQ.Socket socket, Map<Integer, String> cache) {
         ZMsg msg = ZMsg.recvMsg(socket);
         System.out.println("Message ->" + msg.toString());
         ZFrame content = msg.getLast();
