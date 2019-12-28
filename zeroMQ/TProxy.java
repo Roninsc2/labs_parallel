@@ -121,9 +121,9 @@ public class TProxy {
         }
     }
 
-    private static void sendError(ZMQ.Socket frontend, ZMsg msg, String Error) {
+    private static void sendError(ZMQ.Socket frontend, ZMsg msg, String error) {
         ZMsg errMsg = new ZMsg();
-        errMsg.add(noCacheError);
+        errMsg.add(error);
         errMsg.wrap(msg.getFirst());
         errMsg.send(frontend);
     }
