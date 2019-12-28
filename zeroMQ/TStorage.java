@@ -54,11 +54,7 @@ public class TStorage {
         ZFrame content = msg.getLast();
         String[] contentArr  = content.toString().split(DELIMITER);
         if (contentArr[0].equals(GET_CMD)) {
-            int pos = Integer.parseInt(contentArr[1]);
-            String value = cache.get(pos);
-            msg.pollLast();
-            msg.addLast(value);
-            msg.send(socket);
+            processBackendGet(msg, contentArr, socket, cache);
         }
         if (contentArr[0].equals(PUT_CMD)) {
             processBackendPut(msg, contentArr, socket, cache);
