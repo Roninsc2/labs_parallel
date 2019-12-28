@@ -57,14 +57,7 @@ public class TProxy {
                 processFrontendGet()
             } else {
                 if (data[0].equals(PUT_CMD)) {
-                    for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
-                        if (map.getValue().isIntersect(data[1])) {
-                            ZMsg tmp = msg.duplicate();
-                            ZFrame cacheFrame = map.getKey().duplicate();
-                            tmp.addFirst(cacheFrame);
-                            tmp.send(backend);
-                        }
-                    }
+                    processFrontendPut();
                 } else {
                     sendError(frontend, msg, INVALID_DATA);
                 }
