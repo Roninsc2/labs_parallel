@@ -81,7 +81,7 @@ public class TProxy {
         return false;
     }
 
-    private static void processFrontendPut(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
+    private static boolean processFrontendPut(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
         for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
             if (map.getValue().isIntersect(data[1])) {
                 ZMsg tmp = msg.duplicate();
