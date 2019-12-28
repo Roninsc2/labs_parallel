@@ -61,7 +61,7 @@ public class TStorage {
             msg.send(socket);
         }
         if (contentArr[0].equals(PUT_CMD)) {
-            processBackendPut();
+            processBackendPut(msg, contentArr, socket, cache);
         }
     }
 
