@@ -49,7 +49,6 @@ public class TProxy {
         if (msg == null) {
             return true;
         }
-        String err;
         if (commutator.isEmpty()) {
 
             sendError(frontend, msg, NO_CACHE_ERROR);
