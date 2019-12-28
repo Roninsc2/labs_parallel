@@ -78,6 +78,7 @@ public class TProxy {
             }
             return true;
         }
+        return false;
     }
 
     private static void processFrontendPut(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
