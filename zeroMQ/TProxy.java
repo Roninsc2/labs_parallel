@@ -68,13 +68,16 @@ public class TProxy {
 
     private static boolean processFrontendGet(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
         String[] data = msg.getLast().toString().split(DELIMITER);
-        for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
-            if (map.getValue().isIntersect(data[1])) {
-                ZFrame cacheFrame = map.getKey().duplicate();
-                msg.addFirst(cacheFrame);
-                msg.send(backend);
+        if (data[0].equals(GET_CMD)) {
+            for (Map.Entry<ZFrame, TCacheMeta> map : commutator.entrySet()) {
+                if (map.getValue().isIntersect(data[1])) {
+                    ZFrame cacheFrame = map.getKey().duplicate();
+                    msg.addFirst(cacheFrame);
+                    msg.send(backend);
+                }
             }
         }
+        return true;
     }
 
     private static void processFrontendPut(ZMsg msg, ZMQ.Socket backend, Map<ZFrame, TCacheMeta> commutator) {
