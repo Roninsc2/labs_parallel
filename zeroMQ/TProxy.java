@@ -85,7 +85,7 @@ public class TProxy {
             return true;
         }
         if (msg.getLast().toString().contains(HEARTBEAT_CMD)) {
-            processHeartbeat(commutator, msg);
+            processBackendHeartbeat(commutator, msg);
         } else {
             System.out.println("NO HEARTBEAT ->" + msg);
             msg.pop();
