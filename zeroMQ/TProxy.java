@@ -52,7 +52,9 @@ public class TProxy {
         if (commutator.isEmpty()) {
             sendError(frontend, msg, NO_CACHE_ERROR);
         } else  {
-            //String[] data = msg.getLast().toString().split(DELIMITER);
+            String[] data = msg.getLast().toString().split(DELIMITER);
+            if (processFrontendGet(data))
+
             sendError(frontend, msg, INVALID_DATA);
         }
         return false;
